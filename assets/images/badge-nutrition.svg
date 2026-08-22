@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="t3">
+  <title id="t3">Clinical nutrition badge</title>
+  <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#0d7377"/>
+  <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <path d="M40 28c10 0 18 8 18 20 0 9-8 14-18 14s-18-5-18-14c0-12 8-20 18-20z" fill="#f8fafd"/>
+  <path d="M40 28c0-8 4-14 8-16" fill="none" stroke="#14ffec" stroke-width="3" stroke-linecap="round"/>
+</svg>

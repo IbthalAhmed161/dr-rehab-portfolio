@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="t4">
+  <title id="t4">Quality and honors badge</title>
+  <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#0f2b48"/>
+  <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <path d="M40 22l22 8v14c0 13-9 21-22 26-13-5-22-13-22-26V30z" fill="#f8fafd"/>
+  <path d="M32 42l6 6 11-13" fill="none" stroke="#0d7377" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-labelledby="avatarTitle">
+  <title id="avatarTitle">Portrait placeholder for Dr. Rehab Mohamed Hassan</title>
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#153a5f"/>
+      <stop offset="100%" stop-color="#0d7377"/>
+    </linearGradient>
+    <linearGradient id="avatarRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1cf6b"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="480" rx="28" fill="url(#avatarBg)"/>
+  <g opacity="0.14">
+    <circle cx="60" cy="60" r="120" fill="#14ffec"/>
+    <circle cx="360" cy="440" r="140" fill="#d4af37"/>
+  </g>
+  <circle cx="200" cy="196" r="98" fill="none" stroke="url(#avatarRing)" stroke-width="3"/>
+  <circle cx="200" cy="170" r="58" fill="#f8fafd" opacity="0.92"/>
+  <path d="M112 336c0-58 39-96 88-96s88 38 88 96v22c0 8-6 14-14 14H126c-8 0-14-6-14-14z" fill="#f8fafd" opacity="0.92"/>
+  <text x="200" y="452" text-anchor="middle" font-family="Georgia, serif" font-size="17" letter-spacing="1.6" fill="#f1cf6b">DR. REHAB HASSAN</text>
+</svg>
