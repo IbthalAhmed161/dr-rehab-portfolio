@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificates | Dr. Rehab Hassan — Diplomas, Trainings &amp; Honors</title>
-<meta name="description" content="Full archive of Dr. Rehab Mohamed Hassan's academic degrees, healthcare management, clinical nutrition and quality-control certifications, with filters and image modal view.">
+<meta name="description" content="Full archive of Dr. Rehab Mohamed Hassan's academic degrees, healthcare management, clinical nutrition and quality-control certifications.">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,25 +13,73 @@
 <style>
   .cert-img-thumb {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 12px;
     background: #f1f5f9;
+    cursor: pointer;
+  }
+  
+  /* Modal Overlay & Box Fix */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .modal-backdrop.active {
+    display: flex !important;
+  }
+  .modal-box {
+    background: #ffffff;
+    border-radius: 14px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f1f5f9;
+    border: none;
+    font-size: 1.5rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #334155;
+    transition: 0.2s;
+  }
+  .modal-close:hover {
+    background: #e2e8f0;
+    color: #000;
   }
   .modal-img-preview {
     width: 100%;
-    max-height: 480px;
+    max-height: 420px;
     object-fit: contain;
     border-radius: 8px;
+    margin-top: 10px;
     margin-bottom: 16px;
-    background: #0f172a;
-  }
-  .modal-box {
-    max-width: 680px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
   }
 </style>
 </head>
@@ -52,18 +100,10 @@
       <a href="contact.html" data-nav>Contact</a>
       <a href="contact.html" class="btn btn-gold btn-sm">Book Consultation</a>
     </nav>
-    <div class="nav-cta">
-      <a href="contact.html" class="btn btn-primary btn-sm">Book Consultation</a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
   </div>
 </header>
-<div class="nav-drawer-backdrop" id="navBackdrop"></div>
 
 <main id="main">
-
   <section class="page-banner">
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Home</a> / Certificates</div>
@@ -75,43 +115,41 @@
 
   <section class="section">
     <div class="container">
-
       <div class="filter-bar" role="tablist" aria-label="Filter certificates by category">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="filter-count">34</span></button>
-        <button class="filter-btn" data-filter="academic" role="tab" aria-selected="false">Physical Therapy <span class="filter-count">5</span></button>
-        <button class="filter-btn" data-filter="nutrition" role="tab" aria-selected="false">Clinical Nutrition <span class="filter-count">7</span></button>
-        <button class="filter-btn" data-filter="quality" role="tab" aria-selected="false">Infection Control &amp; Quality <span class="filter-count">6</span></button>
-        <button class="filter-btn" data-filter="management" role="tab" aria-selected="false">Hospital Management <span class="filter-count">6</span></button>
-        <button class="filter-btn" data-filter="leadership" role="tab" aria-selected="false">Leadership &amp; Tech <span class="filter-count">10</span></button>
+        <button class="filter-btn active" data-filter="all">All <span class="filter-count">34</span></button>
+        <button class="filter-btn" data-filter="academic">Physical Therapy <span class="filter-count">5</span></button>
+        <button class="filter-btn" data-filter="nutrition">Clinical Nutrition <span class="filter-count">7</span></button>
+        <button class="filter-btn" data-filter="quality">Infection Control &amp; Quality <span class="filter-count">6</span></button>
+        <button class="filter-btn" data-filter="management">Hospital Management <span class="filter-count">6</span></button>
+        <button class="filter-btn" data-filter="leadership">Leadership &amp; Tech <span class="filter-count">10</span></button>
       </div>
 
       <div class="cert-grid">
-
-        <!-- 1. PT Syndicate Card -->
+        <!-- 1 -->
         <article class="cert-card" data-category="academic"
           data-category-label="Physical Therapy" data-img="assets/images/physical-therapy-syndicate-card.jpg"
-          data-title="Syndicate Membership & Practice Card" data-issuer="General Physical Therapy Syndicate of Egypt"
-          data-date="Valid to 2026" data-level="Card No. 2003-3507 · Reg. 2274"
+          data-title="Syndicate Membership Card" data-issuer="General Physical Therapy Syndicate of Egypt"
+          data-date="Valid to 2026" data-level="Registration No. 2274"
           data-desc="Official registration card and practicing license from the General Physical Therapy Syndicate of Egypt.">
-          <img src="assets/images/physical-therapy-syndicate-card.jpg" alt="Syndicate Membership Card" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/physical-therapy-syndicate-card.jpg" alt="Syndicate Card" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
-              <span class="cert-level">Registration No. 2274</span>
+              <span class="cert-level">Reg. No. 2274</span>
               <h3>Syndicate Membership Card</h3>
               <div class="cert-issuer">GPTN — Egypt</div>
             </div>
           </div>
-          <div class="cert-date">Reg. 2003</div>
+          <div class="cert-date">2003</div>
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 2. PT License -->
+        <!-- 2 -->
         <article class="cert-card" data-category="academic"
           data-category-label="Physical Therapy" data-img="assets/images/physical-therapy-license.jpg"
           data-title="Physical Therapy Practice License" data-issuer="Ministry of Health and Population"
           data-date="2003" data-level="Permanent License No. 2274"
           data-desc="Permanent professional practice license issued by the Egyptian Ministry of Health and Population.">
-          <img src="assets/images/physical-therapy-license.jpg" alt="Practice License" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/physical-therapy-license.jpg" alt="Practice License" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">License No. 2274</span>
@@ -123,13 +161,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 3. PT Bachelor -->
+        <!-- 3 -->
         <article class="cert-card" data-category="academic"
           data-category-label="Physical Therapy" data-img="assets/images/physical-therapy-bachelor.jpg"
           data-title="Bachelor of Physical Therapy" data-issuer="Cairo University"
           data-date="May 2003" data-level="Very Good with Honors (81.27%)"
           data-desc="Undergraduate degree in Physical Therapy, completed at Cairo University with Very Good with Honors.">
-          <img src="assets/images/physical-therapy-bachelor.jpg" alt="Bachelor Degree" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/physical-therapy-bachelor.jpg" alt="Bachelor Degree" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Honors · 81.27%</span>
@@ -141,13 +179,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 4. Myofascial Release -->
+        <!-- 4 -->
         <article class="cert-card" data-category="academic"
           data-category-label="Physical Therapy" data-img="assets/images/myofascial-release.jpg"
           data-title="Introduction to Myofascial Release" data-issuer="Osteopathic College of Ontario"
-          data-date="2018" data-level="Specialized Training"
+          data-date="2018" data-level="Specialized Workshop"
           data-desc="Clinical workshop covering myofascial release protocols and manual therapeutic techniques.">
-          <img src="assets/images/myofascial-release.jpg" alt="Myofascial Release" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/myofascial-release.jpg" alt="Myofascial Release" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Specialized Training</span>
@@ -159,31 +197,31 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 5. Cupping Therapy -->
+        <!-- 5 -->
         <article class="cert-card" data-category="academic"
           data-category-label="Physical Therapy" data-img="assets/images/cupping-therapy.jpg"
-          data-title="Advanced Cupping Therapy (Hijama)" data-issuer="Integrative Physical Therapy Center"
+          data-title="Cupping Therapy Certification" data-issuer="Integrative Physical Therapy"
           data-date="Advanced Level" data-level="Clinical Certification"
-          data-desc="Applied certification in wet/dry cupping therapeutic protocols for pain relief and rehab.">
-          <img src="assets/images/cupping-therapy.jpg" alt="Cupping Therapy" class="cert-img-thumb" loading="lazy">
+          data-desc="Applied certification in cupping therapeutic protocols for rehabilitation.">
+          <img src="assets/images/cupping-therapy.jpg" alt="Cupping Therapy" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Clinical Certification</span>
               <h3>Cupping Therapy Certification</h3>
-              <div class="cert-issuer">Integrative Medicine Division</div>
+              <div class="cert-issuer">Integrative Medicine</div>
             </div>
           </div>
-          <div class="cert-date">Professional</div>
+          <div class="cert-date">Certified</div>
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 6. Zewail Nutrition -->
+        <!-- 6 -->
         <article class="cert-card" data-category="nutrition"
           data-category-label="Clinical Nutrition" data-img="assets/images/zewail-nutrition.jpg"
           data-title="Clinical Nutrition Training Program (45 Hours)" data-issuer="Zewail City & Medix"
           data-date="45 Hours" data-level="Specialized Course"
           data-desc="Intensive training program in clinical and therapeutic nutrition at Zewail City of Science and Technology.">
-          <img src="assets/images/zewail-nutrition.jpg" alt="Zewail Nutrition" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/zewail-nutrition.jpg" alt="Zewail Nutrition" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">45 Hours</span>
@@ -191,17 +229,17 @@
               <div class="cert-issuer">Zewail City &amp; Medix</div>
             </div>
           </div>
-          <div class="cert-date">Professional</div>
+          <div class="cert-date">Certified</div>
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 7. AACME Nutrition Diploma -->
+        <!-- 7 -->
         <article class="cert-card" data-category="nutrition"
           data-category-label="Clinical Nutrition" data-img="assets/images/nutrition-diploma.jpg"
           data-title="Clinical Nutrition Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
           data-date="2023" data-level="Professional Diploma"
-          data-desc="International postgraduate diploma covering clinical nutrition assessment and therapeutic dietary interventions.">
-          <img src="assets/images/nutrition-diploma.jpg" alt="Nutrition Diploma" class="cert-img-thumb" loading="lazy">
+          data-desc="Postgraduate diploma covering clinical nutrition assessment and therapeutic dietary plans.">
+          <img src="assets/images/nutrition-diploma.jpg" alt="Nutrition Diploma" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Diploma</span>
@@ -213,13 +251,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 8. UNICEF Anthropometric -->
+        <!-- 8 -->
         <article class="cert-card" data-category="nutrition"
           data-category-label="Clinical Nutrition" data-img="assets/images/unicef-anthropometric-measurements.jpg"
-          data-title="Anthropometric Measurements for Children & Youth" data-issuer="UNICEF & National Nutrition Institute"
+          data-title="Anthropometric Measurements for Children" data-issuer="UNICEF & National Nutrition Institute"
           data-date="August 12, 2025" data-level="Accredited Certificate"
-          data-desc="Theoretical training for measuring physical growth standards in children by UNICEF and Egypt MOH.">
-          <img src="assets/images/unicef-anthropometric-measurements.jpg" alt="UNICEF Measurements" class="cert-img-thumb" loading="lazy">
+          data-desc="Theoretical training for measuring physical growth standards in children by UNICEF and MOH.">
+          <img src="assets/images/unicef-anthropometric-measurements.jpg" alt="UNICEF Anthropometric" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">UNICEF Certified</span>
@@ -231,13 +269,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 9. UNICEF Breastfeeding -->
+        <!-- 9 -->
         <article class="cert-card" data-category="nutrition"
           data-category-label="Clinical Nutrition" data-img="assets/images/unicef-breastfeeding-fundamentals.jpg"
           data-title="Fundamentals of Breastfeeding (20 Hours)" data-issuer="UNICEF, WFP & National Nutrition Institute"
           data-date="September 08, 2025" data-level="20 Hours Course"
           data-desc="Specialized maternal and newborn feeding program jointly conducted by UNICEF and WFP.">
-          <img src="assets/images/unicef-breastfeeding-fundamentals.jpg" alt="UNICEF Breastfeeding" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/unicef-breastfeeding-fundamentals.jpg" alt="UNICEF Breastfeeding" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">20 Hours</span>
@@ -249,13 +287,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 10. Golden 1000 Days -->
+        <!-- 10 -->
         <article class="cert-card" data-category="nutrition"
           data-category-label="Clinical Nutrition" data-img="assets/images/family-counseling-golden-1000-days.jpg"
-          data-title="Family Counseling Training — The Golden 1000 Days" data-issuer="Presidential Initiative — Ministry of Health"
+          data-title="Family Counseling (Golden 1000 Days)" data-issuer="Presidential Initiative — Ministry of Health"
           data-date="2025" data-level="National Initiative"
           data-desc="Accredited trainer in family and maternal nutritional guidance under the presidential initiative.">
-          <img src="assets/images/family-counseling-golden-1000-days.jpg" alt="Golden 1000 Days" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/family-counseling-golden-1000-days.jpg" alt="Family Counseling" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Presidential Initiative</span>
@@ -267,13 +305,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 11. Clinical Nutrition Workshop -->
+        <!-- 11 -->
         <article class="cert-card" data-category="nutrition"
           data-category-label="Clinical Nutrition" data-img="assets/images/clinical-nutrition-workshop.jpg"
-          data-title="Practical Clinical Nutrition Workshop" data-issuer="Better Life Academy"
-          data-date="2023" data-level="Case-Based Training"
+          data-title="Clinical Nutrition Practice Workshop" data-issuer="Better Life Academy"
+          data-date="2023" data-level="Case Studies"
           data-desc="Practical case analysis and individualized diet formulation for metabolic disorders.">
-          <img src="assets/images/clinical-nutrition-workshop.jpg" alt="Nutrition Workshop" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/clinical-nutrition-workshop.jpg" alt="Nutrition Workshop" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Case Studies</span>
@@ -285,13 +323,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 12. Therapeutic Nutrition Specialist -->
+        <!-- 12 -->
         <article class="cert-card" data-category="nutrition"
           data-category-label="Clinical Nutrition" data-img="assets/images/therapeutic-nutrition-specialist.jpg"
-          data-title="Therapeutic Nutrition Specialist Training" data-issuer="Medical Education Platform"
-          data-date="2024" data-level="Specialist Certificate"
+          data-title="Therapeutic Nutrition Specialist" data-issuer="Medical Academy"
+          data-date="2024" data-level="Specialist Level"
           data-desc="Specialized certificate in clinical nutrition management for medical conditions.">
-          <img src="assets/images/therapeutic-nutrition-specialist.jpg" alt="Therapeutic Nutrition" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/therapeutic-nutrition-specialist.jpg" alt="Nutrition Specialist" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Specialist Level</span>
@@ -303,13 +341,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 13. AACME Infection Control Diploma -->
+        <!-- 13 -->
         <article class="cert-card" data-category="quality"
           data-category-label="Infection Control & Quality" data-img="assets/images/infection-prevention-quality-control-diploma.jpg"
           data-title="Infection Prevention & Quality Control Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
-          data-date="2023" data-level="Postgraduate Diploma"
+          data-date="2023" data-level="Diploma"
           data-desc="Comprehensive diploma in infection prevention protocols and healthcare quality management.">
-          <img src="assets/images/infection-prevention-quality-control-diploma.jpg" alt="Infection Prevention Diploma" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/infection-prevention-quality-control-diploma.jpg" alt="Infection Diploma" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Diploma</span>
@@ -321,13 +359,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 14. Zewail Infection Control -->
+        <!-- 14 -->
         <article class="cert-card" data-category="quality"
           data-category-label="Infection Control & Quality" data-img="assets/images/zewail-infection-control.jpg"
-          data-title="Infection Prevention & Control Blended Training" data-issuer="Center for Microbiology, Zewail City"
+          data-title="Infection Prevention & Control Program" data-issuer="Zewail City"
           data-date="2023" data-level="Blended Training"
           data-desc="Advanced practical and theoretical training in hospital epidemiology and infection control standards.">
-          <img src="assets/images/zewail-infection-control.jpg" alt="Zewail Infection Control" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/zewail-infection-control.jpg" alt="Zewail Infection" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Blended Training</span>
@@ -339,17 +377,17 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 15. Medix Statement 1 -->
+        <!-- 15 -->
         <article class="cert-card" data-category="quality"
           data-category-label="Infection Control & Quality" data-img="assets/images/medix-infection-control-statement.jpg"
-          data-title="Practical Infection Control Completion Statement" data-issuer="Medix Educational Platform"
-          data-date="2023" data-level="Attestation Statement"
+          data-title="Infection Control Training Statement" data-issuer="Medix Educational Platform"
+          data-date="2023" data-level="Training Statement"
           data-desc="Official training statement confirming completion of clinical infection control workshops.">
-          <img src="assets/images/medix-infection-control-statement.jpg" alt="Medix Statement" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/medix-infection-control-statement.jpg" alt="Medix Statement" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Training Statement</span>
-              <h3>Infection Control Completion</h3>
+              <h3>Infection Control Statement</h3>
               <div class="cert-issuer">Medix Training</div>
             </div>
           </div>
@@ -357,17 +395,17 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 16. Medix Statement 2 -->
+        <!-- 16 -->
         <article class="cert-card" data-category="quality"
           data-category-label="Infection Control & Quality" data-img="assets/images/medix-infection-control-statement-copy.jpg"
           data-title="Infection Control Verification Record" data-issuer="Medix Platform"
           data-date="2023" data-level="Institutional Record"
           data-desc="Institutional completion verification for healthcare infection prevention programs.">
-          <img src="assets/images/medix-infection-control-statement-copy.jpg" alt="Medix Record" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/medix-infection-control-statement-copy.jpg" alt="Medix Record" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Institutional Record</span>
-              <h3>Infection Control Verification</h3>
+              <h3>Infection Control Record</h3>
               <div class="cert-issuer">Medix</div>
             </div>
           </div>
@@ -375,13 +413,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 17. Basic Infection Control -->
+        <!-- 17 -->
         <article class="cert-card" data-category="quality"
           data-category-label="Infection Control & Quality" data-img="assets/images/infection-control-basic.jpg"
-          data-title="Basic Infection Control in Healthcare" data-issuer="Directorate of Health Affairs"
-          data-date="2022" data-level="Foundational Level"
+          data-title="Basic Infection Control Protocols" data-issuer="Directorate of Health Affairs"
+          data-date="2022" data-level="Foundational"
           data-desc="Standard sanitization protocols, isolation room procedures, and personal protective protocols.">
-          <img src="assets/images/infection-control-basic.jpg" alt="Basic Infection Control" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/infection-control-basic.jpg" alt="Infection Basic" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Foundational</span>
@@ -393,13 +431,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 18. Advanced Infection Control -->
+        <!-- 18 -->
         <article class="cert-card" data-category="quality"
           data-category-label="Infection Control & Quality" data-img="assets/images/infection-control-advanced.jpg"
-          data-title="Advanced Hospital Infection Control & Epidemiology" data-issuer="Ministry of Health"
+          data-title="Advanced Hospital Infection Control" data-issuer="Ministry of Health"
           data-date="2023" data-level="Advanced Level"
           data-desc="Outbreak management, surveillance systems, and sterilization audit systems in inpatient facilities.">
-          <img src="assets/images/infection-control-advanced.jpg" alt="Advanced Infection Control" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/infection-control-advanced.jpg" alt="Advanced Infection" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Advanced Level</span>
@@ -411,13 +449,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 19. Postgrad Hospital Mgmt -->
+        <!-- 19 -->
         <article class="cert-card" data-category="management"
           data-category-label="Hospital Management" data-img="assets/images/hospital-management-diploma.jpg"
           data-title="Postgraduate Diploma in Hospital Management" data-issuer="Zagazig University"
           data-date="June 2023" data-level="GPA 3.87 / 88.38% (Grade B+)"
           data-desc="Credit-Hour system diploma in healthcare management, clinical economics, and hospital auditing.">
-          <img src="assets/images/hospital-management-diploma.jpg" alt="Hospital Mgmt Diploma" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/hospital-management-diploma.jpg" alt="Hospital Mgmt Diploma" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Grade B+ · GPA 3.87</span>
@@ -429,13 +467,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 20. Hospital Directors Training -->
+        <!-- 20 -->
         <article class="cert-card" data-category="management"
           data-category-label="Hospital Management" data-img="assets/images/hospital-directors-training.jpg"
-          data-title="Hospital Directors & Deputies Leadership Course" data-issuer="Directorate of Health Affairs"
+          data-title="Hospital Directors Leadership Program" data-issuer="Directorate of Health Affairs"
           data-date="2023" data-level="Executive Leadership"
           data-desc="Executive training for hospital directors on crisis leadership and operational oversight.">
-          <img src="assets/images/hospital-directors-training.jpg" alt="Hospital Directors Training" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/hospital-directors-training.jpg" alt="Hospital Directors" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Executive Level</span>
@@ -447,13 +485,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 21. Health Facilities Regulations -->
+        <!-- 21 -->
         <article class="cert-card" data-category="management"
           data-category-label="Hospital Management" data-img="assets/images/health-facilities-regulations.jpg"
-          data-title="Regulations & Inspection of Health Facilities" data-issuer="General Directorate of Technical Inspection — MOH"
+          data-title="Regulations & Laws in Health Facilities" data-issuer="Technical Inspection — MOH"
           data-date="2023" data-level="Regulatory Inspection"
           data-desc="Training on healthcare legal compliance, audit standards, and facility inspection procedures.">
-          <img src="assets/images/health-facilities-regulations.jpg" alt="Regulations Training" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/health-facilities-regulations.jpg" alt="Regulations" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Inspection &amp; Laws</span>
@@ -465,13 +503,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 22. Healthcare Quality Management -->
+        <!-- 22 -->
         <article class="cert-card" data-category="management"
           data-category-label="Hospital Management" data-img="assets/images/healthcare-quality-management.jpg"
-          data-title="Healthcare Quality Management Program (26 Hours)" data-issuer="Princess Fatma Academy for Professional Medical Education"
-          data-date="2022" data-level="Excellent · 88%"
+          data-title="Healthcare Quality Management" data-issuer="Princess Fatma Academy"
+          data-date="2022" data-level="Grade: Excellent (88%)"
           data-desc="26-hour quality management course completed with 88% grade at Princess Fatma Academy.">
-          <img src="assets/images/healthcare-quality-management.jpg" alt="Quality Management" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/healthcare-quality-management.jpg" alt="Quality Management" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Grade: Excellent (88%)</span>
@@ -483,13 +521,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 23. Occupational Safety Basic -->
+        <!-- 23 -->
         <article class="cert-card" data-category="management"
           data-category-label="Hospital Management" data-img="assets/images/occupational-safety-basic.jpg"
-          data-title="Occupational Health & Safety (Basic Level)" data-issuer="National Safety Institute"
+          data-title="Occupational Health & Safety (Basic)" data-issuer="OHS Institute"
           data-date="Basic" data-level="OHS Certification"
           data-desc="Hazard mitigation, staff emergency protocols, and institutional safety regulations.">
-          <img src="assets/images/occupational-safety-basic.jpg" alt="Safety Basic" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/occupational-safety-basic.jpg" alt="Safety Basic" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Basic Level</span>
@@ -501,13 +539,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 24. Occupational Safety Specialist -->
+        <!-- 24 -->
         <article class="cert-card" data-category="management"
           data-category-label="Hospital Management" data-img="assets/images/occupational-safety-specialist.jpg"
           data-title="Occupational Health & Safety Specialist" data-issuer="OHS Institute"
-          data-date="Advanced" data-level="Specialist Certification"
+          data-date="Advanced" data-level="Specialist Level"
           data-desc="Advanced environmental safety control and hospital compliance management.">
-          <img src="assets/images/occupational-safety-specialist.jpg" alt="Safety Specialist" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/occupational-safety-specialist.jpg" alt="Safety Specialist" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Specialist Level</span>
@@ -519,13 +557,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 25. Strategic Studies & National Security -->
+        <!-- 25 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/strategic-studies-national-security.jpg"
-          data-title="Strategic Studies & National Security Course" data-issuer="National Defense College — Military Academy for Postgraduate Studies"
-          data-date="December 06, 2025" data-level="National Defense College"
+          data-category-label="Leadership & Tech" data-img="assets/images/strategic-studies-national-security.jpg"
+          data-title="Strategic Studies & National Security" data-issuer="National Defense College"
+          data-date="December 06, 2025" data-level="Military Academy"
           data-desc="Strategic studies, crisis preparedness, and national security governance.">
-          <img src="assets/images/strategic-studies-national-security.jpg" alt="National Security" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/strategic-studies-national-security.jpg" alt="Strategic Studies" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Defense College</span>
@@ -537,13 +575,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 26. Crisis Management -->
+        <!-- 26 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/crisis-management-negotiation.jpg"
-          data-title="Crisis Management & Negotiation Skills" data-issuer="Higher Studies Academy"
-          data-date="2025" data-level="Advanced Executive"
+          data-category-label="Leadership & Tech" data-img="assets/images/crisis-management-negotiation.jpg"
+          data-title="Crisis Management & Negotiation" data-issuer="Leadership Academy"
+          data-date="2025" data-level="Executive Level"
           data-desc="Decision-making protocols and conflict resolution in healthcare crisis scenarios.">
-          <img src="assets/images/crisis-management-negotiation.jpg" alt="Crisis Management" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/crisis-management-negotiation.jpg" alt="Crisis Management" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Executive Level</span>
@@ -555,13 +593,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 27. Leadership Skills -->
+        <!-- 27 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/leadership-skills-development.jpg"
-          data-title="Leadership Skills & Institutional Excellence" data-issuer="Ministry Training Centers"
+          data-category-label="Leadership & Tech" data-img="assets/images/leadership-skills-development.jpg"
+          data-title="Executive Leadership Skills" data-issuer="Training Administration"
           data-date="2024" data-level="Leadership Track"
           data-desc="Personnel administration, team empowerment, and strategic healthcare workflows.">
-          <img src="assets/images/leadership-skills-development.jpg" alt="Leadership Skills" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/leadership-skills-development.jpg" alt="Leadership Skills" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Leadership Track</span>
@@ -573,13 +611,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 28. Media Office Appreciation -->
+        <!-- 28 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/media-office-appreciation.jpg"
-          data-title="Media Office Recognition — 1st Place Nationwide" data-issuer="Directorate of Health Affairs"
-          data-date="Honor" data-level="National Award"
+          data-category-label="Leadership & Tech" data-img="assets/images/media-office-appreciation.jpg"
+          data-title="Media Office Recognition (1st Place)" data-issuer="Directorate of Health Affairs"
+          data-date="Honor" data-level="Ranked 1st Nationwide"
           data-desc="Recognized as Head of the Media and PR Office ranking first nationwide across Egyptian hospitals.">
-          <img src="assets/images/media-office-appreciation.jpg" alt="Media Appreciation" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/media-office-appreciation.jpg" alt="Media Office" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Ranked 1st Nationwide</span>
@@ -591,17 +629,17 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 29. Hospital Management Appreciation -->
+        <!-- 29 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/hospital-management-team-appreciation.jpg"
-          data-title="Hospital Management Team Appreciation Award" data-issuer="Hospital Administration — Sharqia Health Affairs"
-          data-date="Appreciation Award" data-level="Honor & Merit"
+          data-category-label="Leadership & Tech" data-img="assets/images/hospital-management-team-appreciation.jpg"
+          data-title="Hospital Management Team Appreciation" data-issuer="Health Affairs Directorate"
+          data-date="Honor" data-level="Merit Award"
           data-desc="Ministerial appreciation certificate honoring exceptional leadership in hospital performance.">
-          <img src="assets/images/hospital-management-team-appreciation.jpg" alt="Management Appreciation" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/hospital-management-team-appreciation.jpg" alt="Hospital Team Appreciation" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Merit Award</span>
-              <h3>Hospital Management Team Honor</h3>
+              <h3>Hospital Management Appreciation</h3>
               <div class="cert-issuer">Health Affairs Directorate</div>
             </div>
           </div>
@@ -609,13 +647,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 30. Vision & Leadership Honoring -->
+        <!-- 30 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/vision-and-leadership-honoring.jpg"
-          data-title="Honorary Shield & Certificate (Justice & Peace Ambassador)" data-issuer="Vision & Leadership International Foundation"
-          data-date="Distinguished Honor" data-level="Ambassador of Peace"
+          data-category-label="Leadership & Tech" data-img="assets/images/vision-and-leadership-honoring.jpg"
+          data-title="Vision & Leadership Shield of Excellence" data-issuer="Vision & Leadership Foundation"
+          data-date="Honor" data-level="International Honor"
           data-desc="Shield and certificate of recognition for distinguished public service and healthcare leadership.">
-          <img src="assets/images/vision-and-leadership-honoring.jpg" alt="Vision Honoring" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/vision-and-leadership-honoring.jpg" alt="Vision Honoring" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">International Honor</span>
@@ -627,13 +665,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 31. Medix Midyear Training -->
+        <!-- 31 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/medix-midyear-training.jpg"
-          data-title="Mid-Year Continuing Education Certificate" data-issuer="Medix Platform"
-          data-date="2023" data-level="Continuing Education"
+          data-category-label="Leadership & Tech" data-img="assets/images/medix-midyear-training.jpg"
+          data-title="Medix Mid-Year CME Training" data-issuer="Medix Platform"
+          data-date="2023" data-level="CME Training"
           data-desc="Certificate of completion for specialized clinical and management continuous education tracks.">
-          <img src="assets/images/medix-midyear-training.jpg" alt="Medix Midyear" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/medix-midyear-training.jpg" alt="Medix Midyear" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">CME Training</span>
@@ -645,13 +683,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 32. Digital Transformation (FDTC) -->
+        <!-- 32 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/digital-transformation-certificate.jpg"
-          data-title="Fundamentals of Digital Transformation (FDTC)" data-issuer="Supreme Council of Universities & Zagazig University"
-          data-date="2023" data-level="Accredited IT Certificate"
+          data-category-label="Leadership & Tech" data-img="assets/images/digital-transformation-certificate.jpg"
+          data-title="Digital Transformation (FDTC)" data-issuer="Supreme Council of Universities"
+          data-date="2023" data-level="FDTC Certified"
           data-desc="National certification covering information systems, digital healthcare workflows, and IT literacy.">
-          <img src="assets/images/digital-transformation-certificate.jpg" alt="Digital Transformation" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/digital-transformation-certificate.jpg" alt="Digital Transformation" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">FDTC Certified</span>
@@ -663,13 +701,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 33. ICDL -->
+        <!-- 33 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/icdl-certificate.jpg"
-          data-title="International Computer Driving License (ICDL)" data-issuer="UNESCO / ICDL GCC Foundation"
-          data-date="Certified" data-level="International Certification"
+          data-category-label="Leadership & Tech" data-img="assets/images/icdl-certificate.jpg"
+          data-title="ICDL IT Literacy Certification" data-issuer="UNESCO / ICDL Foundation"
+          data-date="Certified" data-level="International IT"
           data-desc="International benchmark certification verifying full competency in core computer applications.">
-          <img src="assets/images/icdl-certificate.jpg" alt="ICDL Certificate" class="cert-img-thumb" loading="lazy">
+          <img src="assets/images/icdl-certificate.jpg" alt="ICDL" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">International IT</span>
@@ -681,13 +719,13 @@
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- 34. Profile Accolade -->
+        <!-- 34 -->
         <article class="cert-card" data-category="leadership"
-          data-category-label="Leadership & Honors" data-img="assets/images/doctor-profile.jpg"
-          data-title="Professional Profile & Clinical Leadership" data-issuer="Al-Zahraa Physical Therapy Center"
-          data-date="Current" data-level="Executive Portrait"
-          data-desc="Official medical consultant portrait and director at Al-Zahraa Center and Al-Ibrahimiya Central Hospital.">
-          <img src="assets/images/doctor-profile.jpg" alt="Dr Rehab Hassan Profile" class="cert-img-thumb" loading="lazy">
+          data-category-label="Leadership & Tech" data-img="assets/images/doctor-profile.jpg"
+          data-title="Medical Practice Leadership" data-issuer="Al-Zahraa Center"
+          data-date="Current" data-level="Lead Consultant"
+          data-desc="Official medical consultant portrait and leadership across physical therapy and clinical nutrition.">
+          <img src="assets/images/doctor-profile.jpg" alt="Doctor Profile" class="cert-img-thumb" onerror="this.src='assets/images/logo-seal.svg'">
           <div class="cert-top">
             <div>
               <span class="cert-level">Lead Consultant</span>
@@ -698,116 +736,67 @@
           <div class="cert-date">Current</div>
           <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
-
       </div>
-
-      <div class="empty-state">
-        <h3>No certificates in this category</h3>
-        <p>Try another filter above.</p>
-      </div>
-
     </div>
   </section>
-
 </main>
 
-<!-- Certificate Detail Modal -->
-<div class="modal-backdrop" id="certModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<!-- Modal Viewer -->
+<div class="modal-backdrop" id="certModal">
   <div class="modal-box">
-    <button class="modal-close" aria-label="Close certificate details">&times;</button>
-    <img id="modalImg" class="modal-img-preview" src="" alt="Certificate Preview">
-    <span class="eyebrow" data-modal-category>Category</span>
-    <h3 id="modalTitle" data-modal-title>Title</h3>
-    <div class="cert-issuer" data-modal-issuer style="margin-bottom: 8px; font-weight: 600; color: #0d7377;">Issuer</div>
-    <div class="modal-meta" style="display: flex; gap: 15px; font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">
-      <span data-modal-date>Date</span>
-      <span data-modal-level>Level</span>
+    <button class="modal-close" id="closeBtn">&times;</button>
+    <img id="modalImg" class="modal-img-preview" src="" alt="Certificate Full Image">
+    <span class="eyebrow" id="modalCategory">Category</span>
+    <h3 id="modalTitle" style="margin: 6px 0;">Title</h3>
+    <div id="modalIssuer" style="font-weight: 600; color: #0d7377; margin-bottom: 6px;">Issuer</div>
+    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">
+      <span id="modalDate">Date</span> &bull; <span id="modalLevel">Level</span>
     </div>
-    <p data-modal-desc style="font-size: 0.95rem; line-height: 1.6; color: #334155;">Description</p>
+    <p id="modalDesc" style="font-size: 0.95rem; line-height: 1.6; color: #334155;">Description</p>
   </div>
 </div>
 
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <img src="assets/images/logo-seal.svg" alt="" width="48" height="48">
-      <div>
-        <h3>Dr. Rehab Mohamed Hassan</h3>
-        <p>Senior Physical Therapist &amp; Healthcare Management Consultant, Clinical Nutrition Specialist. License No. 2274, General Physical Therapy Syndicate of Egypt.</p>
-      </div>
-    </div>
-    <div class="footer">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="certificates.html">Certificates</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer">
-      <h4>Connect</h4>
-      <div class="social-row">
-        <a class="social-pill" href="https://www.facebook.com/share/14iZMghUTBf/" target="_blank" rel="noopener">Clinic Page</a>
-        <a class="social-pill" href="https://www.facebook.com/groups/1322577555018839/?ref=share&amp;mibextid=NSMWBT" target="_blank" rel="noopener">Clinic Group</a>
-        <a class="social-pill" href="https://www.facebook.com/share/1DDHBu3A2B/" target="_blank" rel="noopener">Personal Profile</a>
-      </div>
-    </div>
-  </div>
   <div class="container footer-bottom">
-    <span>© <span id="year"></span> Al‑Zahraa Physical Therapy Center — Dr. Rehab Mohamed Hassan. All rights reserved.</span>
-    <span>Al Sharqia Governorate, Egypt</span>
+    <span>© Al‑Zahraa Physical Therapy Center — Dr. Rehab Mohamed Hassan.</span>
   </div>
 </footer>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Tab Filtering
+    // Filter logic
     const filterBtns = document.querySelectorAll('.filter-btn');
     const certCards = document.querySelectorAll('.cert-card');
-    const emptyState = document.querySelector('.empty-state');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
+        filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-
         const filter = btn.getAttribute('data-filter');
-        let visibleCount = 0;
 
         certCards.forEach(card => {
           if (filter === 'all' || card.getAttribute('data-category') === filter) {
             card.style.display = 'flex';
-            visibleCount++;
           } else {
             card.style.display = 'none';
           }
         });
-
-        if (emptyState) {
-          emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
-        }
       });
     });
 
-    // 2. Modal with Real Images
+    // Modal popup logic
     const modal = document.getElementById('certModal');
     const modalImg = document.getElementById('modalImg');
-    const modalTitle = document.querySelector('[data-modal-title]');
-    const modalIssuer = document.querySelector('[data-modal-issuer]');
-    const modalCategory = document.querySelector('[data-modal-category]');
-    const modalDate = document.querySelector('[data-modal-date]');
-    const modalLevel = document.querySelector('[data-modal-level]');
-    const modalDesc = document.querySelector('[data-modal-desc]');
-    const closeBtn = document.querySelector('.modal-close');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalIssuer = document.getElementById('modalIssuer');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalDate = document.getElementById('modalDate');
+    const modalLevel = document.getElementById('modalLevel');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeBtn = document.getElementById('closeBtn');
 
-    document.querySelectorAll('[data-cert-trigger]').forEach(button => {
-      button.addEventListener('click', (e) => {
+    document.querySelectorAll('[data-cert-trigger], .cert-img-thumb').forEach(el => {
+      el.addEventListener('click', (e) => {
         const card = e.target.closest('.cert-card');
         modalImg.src = card.getAttribute('data-img');
         modalTitle.textContent = card.getAttribute('data-title');
@@ -818,18 +807,12 @@
         modalDesc.textContent = card.getAttribute('data-desc');
 
         modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
       });
     });
 
-    const closeModal = () => {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-    };
-
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
     });
   });
 </script>
