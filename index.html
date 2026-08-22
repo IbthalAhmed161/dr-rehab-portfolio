@@ -10,6 +10,86 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* Styles for the interactive filterable certificates section */
+  .cert-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+  }
+  .cert-btn {
+    padding: 0.55rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid #0d7377;
+    background: transparent;
+    color: #0d7377;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .cert-btn:hover, .cert-btn.active {
+    background: #0d7377;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(13, 115, 119, 0.2);
+  }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+  .cert-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .cert-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: #f8f9fa;
+    overflow: hidden;
+  }
+  .cert-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .cert-card:hover .cert-img-wrapper img {
+    transform: scale(1.04);
+  }
+  .cert-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .cert-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: #1a2530;
+    line-height: 1.4;
+  }
+  .cert-content p {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+  }
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -24,7 +104,7 @@
       <a href="index.html" data-nav>Home</a>
       <a href="about.html" data-nav>About</a>
       <a href="services.html" data-nav>Services</a>
-      <a href="certificates.html" data-nav>Certificates</a>
+      <a href="#certificates" data-nav>Certificates</a>
       <a href="contact.html" data-nav>Contact</a>
       <a href="contact.html" class="btn btn-gold btn-sm">Book Consultation</a>
     </nav>
@@ -55,12 +135,12 @@
         </div>
         <div class="btn-row">
           <a href="contact.html" class="btn btn-gold">Book a Consultation</a>
-          <a href="certificates.html" class="btn btn-outline">View Certificates</a>
+          <a href="#certificates" class="btn btn-outline">View Certificates</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-photo-card">
-          <img src="assets/images/avatar-placeholder.svg" alt="Portrait placeholder for Dr. Rehab Mohamed Hassan — replace with an official clinic photograph" width="340" height="408">
+          <img src="assets/images/doctor-profile.jpg" alt="Dr. Rehab Mohamed Hassan" width="340" height="408">
         </div>
         <img src="assets/images/logo-seal.svg" alt="" class="hero-seal" aria-hidden="true">
       </div>
@@ -71,8 +151,8 @@
           <div class="stat-label">Years in Physical Therapy Practice</div>
         </div>
         <div class="stat-card">
-          <span class="stat-num" data-counter="18" data-suffix="+">0</span>
-          <div class="stat-label">Certifications &amp; Diplomas</div>
+          <span class="stat-num" data-counter="34" data-suffix="">0</span>
+          <div class="stat-label">Accreditations &amp; Credentials</div>
         </div>
         <div class="stat-card">
           <span class="stat-num" data-counter="4" data-suffix="">0</span>
@@ -171,6 +251,367 @@
     </div>
   </section>
 
+  <!-- ============================= CERTIFICATES & CREDENTIALS ============================= -->
+  <section class="section" id="certificates" style="background: #fbfbfb;">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Accreditations &amp; Qualifications</span>
+        <h2>Certificates &amp; Achievements</h2>
+        <p>A comprehensive gallery of professional qualifications, academic diplomas, and ministerial honors across all medical and administrative domains.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="cert-filters">
+        <button class="cert-btn active" data-filter="all">All (الكل)</button>
+        <button class="cert-btn" data-filter="physio">Physical Therapy (العلاج الطبيعي)</button>
+        <button class="cert-btn" data-filter="nutrition">Clinical Nutrition (التغذية العلاجية)</button>
+        <button class="cert-btn" data-filter="infection">Infection Control &amp; Quality (مكافحة العدوى والجودة)</button>
+        <button class="cert-btn" data-filter="management">Hospital Mgmt &amp; Safety (الإدارة والسلامة)</button>
+        <button class="cert-btn" data-filter="leadership">Leadership &amp; Honors (القيادة والتكريمات)</button>
+      </div>
+
+      <!-- Certificate Grid -->
+      <div class="cert-grid">
+
+        <!-- Physical Therapy & Credentials -->
+        <article class="cert-card" data-category="physio">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/physical-therapy-syndicate-card.jpg" alt="Syndicate Membership Card" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Syndicate Membership Card</h4>
+            <p>General Physical Therapy Syndicate of Egypt</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="physio">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/physical-therapy-license.jpg" alt="Practice License" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Physical Therapy Practice License</h4>
+            <p>Ministry of Health &amp; Population (License No. 2274)</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="physio">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/physical-therapy-bachelor.jpg" alt="Bachelor of Physical Therapy" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Bachelor’s Degree in Physical Therapy</h4>
+            <p>Faculty of Physical Therapy</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="physio">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/myofascial-release.jpg" alt="Myofascial Release Certificate" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Myofascial Release Techniques</h4>
+            <p>Advanced Clinical Workshop &amp; Manual Therapy</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="physio">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/cupping-therapy.jpg" alt="Cupping Therapy Certification" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Cupping Therapy Certification</h4>
+            <p>Advanced Integrative Physical Therapy Protocols</p>
+          </div>
+        </article>
+
+        <!-- Clinical Nutrition -->
+        <article class="cert-card" data-category="nutrition">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/zewail-nutrition.jpg" alt="Clinical Nutrition Program" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Clinical Nutrition Program</h4>
+            <p>Zewail City of Science and Technology &amp; Medix</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="nutrition">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/nutrition-diploma.jpg" alt="Clinical Nutrition Diploma" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Clinical Nutrition Diploma</h4>
+            <p>American Association of Continuing Medical Education (AACME)</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="nutrition">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/unicef-anthropometric-measurements.jpg" alt="Anthropometric Measurements Training" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Anthropometric Measurements for Children</h4>
+            <p>UNICEF, Ministry of Health &amp; National Nutrition Institute</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="nutrition">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/unicef-breastfeeding-fundamentals.jpg" alt="Fundamentals of Breastfeeding" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Fundamentals of Breastfeeding (20 Hours)</h4>
+            <p>UNICEF, World Food Programme &amp; NNI</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="nutrition">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/family-counseling-golden-1000-days.jpg" alt="Golden 1000 Days Family Counseling" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Family Counseling (Golden 1000 Days)</h4>
+            <p>Presidential Initiative — Ministry of Health &amp; Population</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="nutrition">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/clinical-nutrition-workshop.jpg" alt="Clinical Nutrition Workshop" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Clinical Nutrition Practice Workshop</h4>
+            <p>Specialized Case Management &amp; Dietary Planning</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="nutrition">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/therapeutic-nutrition-specialist.jpg" alt="Therapeutic Nutrition Specialist" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Therapeutic Nutrition Specialist</h4>
+            <p>Advanced Clinical Dietary Management</p>
+          </div>
+        </article>
+
+        <!-- Infection Control & Quality -->
+        <article class="cert-card" data-category="infection">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/infection-prevention-quality-control-diploma.jpg" alt="Infection Prevention & Quality Control" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Infection Prevention &amp; Quality Control Diploma</h4>
+            <p>American Association of Continuing Medical Education (AACME)</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="infection">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/zewail-infection-control.jpg" alt="Infection Prevention & Control" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Infection Prevention &amp; Control Program</h4>
+            <p>Zewail City of Science and Technology</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="infection">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/medix-infection-control-statement.jpg" alt="Infection Control Training Statement" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Infection Control Training Statement</h4>
+            <p>Medix Educational Institution</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="infection">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/medix-infection-control-statement-copy.jpg" alt="Infection Control Verification" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Infection Control Training Attestation</h4>
+            <p>Medix Educational Institution — Verification Record</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="infection">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/infection-control-basic.jpg" alt="Basic Infection Control" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Basic Infection Control Protocols</h4>
+            <p>Healthcare Facility Standards &amp; Sanitization</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="infection">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/infection-control-advanced.jpg" alt="Advanced Infection Control" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Advanced Hospital Infection Control</h4>
+            <p>Epidemiology &amp; Outbreak Management</p>
+          </div>
+        </article>
+
+        <!-- Hospital Management & Safety -->
+        <article class="cert-card" data-category="management">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/hospital-management-diploma.jpg" alt="Hospital Management Diploma" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Postgraduate Diploma in Hospital Management</h4>
+            <p>Healthcare Operations &amp; Clinical Governance</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="management">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/hospital-directors-training.jpg" alt="Hospital Directors Training" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Hospital Directors Leadership Program</h4>
+            <p>Directorate of Health Affairs — Al Sharqia</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="management">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/health-facilities-regulations.jpg" alt="Health Facilities Regulations" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Regulations &amp; Laws in Health Facilities</h4>
+            <p>General Directorate of Technical Inspection — MOH</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="management">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/healthcare-quality-management.jpg" alt="Healthcare Quality Management" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Healthcare Quality Management</h4>
+            <p>Clinical Auditing &amp; Accreditation Readiness</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="management">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/occupational-safety-basic.jpg" alt="Occupational Safety - Basic" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Occupational Safety &amp; Health (Basic)</h4>
+            <p>National Safety Standards in Medical Facilities</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="management">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/occupational-safety-specialist.jpg" alt="Occupational Safety Specialist" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Occupational Safety &amp; Health Specialist</h4>
+            <p>Advanced Hazard Management &amp; Workplace Safety</p>
+          </div>
+        </article>
+
+        <!-- Strategic Leadership, Tech & Honors -->
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/strategic-studies-national-security.jpg" alt="Strategic Studies & National Security" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Strategic Studies &amp; National Security</h4>
+            <p>National Defense College — Military Academy for Postgraduate Studies</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/crisis-management-negotiation.jpg" alt="Crisis Management & Negotiation" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Crisis Management &amp; Negotiation</h4>
+            <p>Strategic Decision-Making in Emergency Situations</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/leadership-skills-development.jpg" alt="Leadership Skills Development" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Executive Leadership Skills</h4>
+            <p>Institutional Excellence &amp; Team Management</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/media-office-appreciation.jpg" alt="Media & PR Office Appreciation" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Certificate of Recognition — Media Office</h4>
+            <p>Directorate of Health Affairs (1st Place Nationwide)</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/hospital-management-team-appreciation.jpg" alt="Hospital Management Appreciation" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Recognition of Hospital Management Team</h4>
+            <p>Directorate of Health Affairs — Al Sharqia</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/vision-and-leadership-honoring.jpg" alt="Vision and Leadership Honoring" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Honorary Shield &amp; Certificate of Excellence</h4>
+            <p>Vision &amp; Leadership International Foundation</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/medix-midyear-training.jpg" alt="Medix Mid-Year Training" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Mid-Year Continuing Education Training</h4>
+            <p>Medix Blended Learning Platform</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/digital-transformation-certificate.jpg" alt="Digital Transformation Certificate" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>Healthcare Digital Transformation</h4>
+            <p>Modernization &amp; Information Systems Implementation</p>
+          </div>
+        </article>
+
+        <article class="cert-card" data-category="leadership">
+          <div class="cert-img-wrapper">
+            <img src="assets/images/icdl-certificate.jpg" alt="ICDL Certificate" loading="lazy">
+          </div>
+          <div class="cert-content">
+            <h4>International Computer Driving License (ICDL)</h4>
+            <p>Professional IT Literacy Certification</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============================= CTA BANNER ============================= -->
   <section class="section-tight">
     <div class="container">
@@ -204,7 +645,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -224,5 +665,29 @@
 </footer>
 
 <script src="assets/js/script.js"></script>
+<script>
+  // Filter tabs logic for certificates gallery
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.cert-filters .cert-btn');
+    const certCards = document.querySelectorAll('.cert-grid .cert-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const selectedFilter = button.getAttribute('data-filter');
+
+        certCards.forEach(card => {
+          if (selectedFilter === 'all' || card.getAttribute('data-category') === selectedFilter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
 </body>
 </html>
