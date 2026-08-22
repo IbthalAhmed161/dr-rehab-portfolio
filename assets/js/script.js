@@ -25,7 +25,7 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
-  /* Highlight the current page in the nav -------------------------------- */
+  /* Highlight current page in nav -------------------------------------- */
   function setActiveNavLink() {
     var path = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".nav-links a[data-nav]").forEach(function (link) {
@@ -37,7 +37,7 @@
     });
   }
 
-  /* Header shadow on scroll ------------------------------------------------ */
+  /* Header shadow on scroll -------------------------------------------- */
   function initHeaderScrollState() {
     var header = document.querySelector(".site-header");
     if (!header) return;
@@ -48,7 +48,7 @@
     window.addEventListener("scroll", toggle, { passive: true });
   }
 
-  /* Mobile hamburger drawer ------------------------------------------------ */
+  /* Mobile hamburger drawer -------------------------------------------- */
   function initMobileDrawer() {
     var toggleBtn = document.querySelector(".hamburger");
     var nav = document.querySelector(".nav-links");
@@ -81,7 +81,7 @@
     });
   }
 
-  /* Smooth-scroll for in-page anchors -------------------------------------- */
+  /* Smooth-scroll for in-page anchors ---------------------------------- */
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       link.addEventListener("click", function (e) {
@@ -98,7 +98,7 @@
     });
   }
 
-  /* Animated stat counters (hero) ------------------------------------------ */
+  /* Animated stat counters --------------------------------------------- */
   function initStatCounters() {
     var counters = document.querySelectorAll("[data-counter]");
     if (!counters.length) return;
@@ -144,144 +144,101 @@
     }
   }
 
-  /* Certificates: category filters ----------------------------------------- */
+  /* Certificates: Category Filters (Fixed) ----------------------------- */
   function initCertificateFilters() {
-    var filterBar = document.querySelector(".filter-bar");
-    var cards = document.querySelectorAll(".cert-card");
-    var emptyState = document.querySelector(".empty-state");
-    if (!filterBar || !cards.length) return;
+    var filterBtns = document.querySelectorAll(".filter-bar .filter-btn");
+    var cards = document.querySelectorAll(".cert-grid .cert-card");
+    if (!filterBtns.length || !cards.length) return;
 
-    filterBar.addEventListener("click", function (e) {
-      var btn = e.target.closest(".filter-btn");
-      if (!btn) return;
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
 
-      filterBar.querySelectorAll(".filter-btn").forEach(function (b) {
-        b.classList.remove("active");
-        b.setAttribute("aria-selected", "false");
+        var category = btn.getAttribute("data-filter") || btn.getAttribute("data-filter-target");
+
+        cards.forEach(function (card) {
+          var cardCategory = card.getAttribute("data-category");
+          if (!category || category === "all" || cardCategory === category) {
+            card.style.setProperty("display", "flex", "important");
+          } else {
+            card.style.setProperty("display", "none", "important");
+          }
+        });
       });
-      btn.classList.add("active");
-      btn.setAttribute("aria-selected", "true");
-
-      var category = btn.getAttribute("data-filter");
-      var visibleCount = 0;
-
-      cards.forEach(function (card) {
-        var matches = category === "all" || card.getAttribute("data-category") === category;
-        card.classList.toggle("hide", !matches);
-        if (matches) visibleCount++;
-      });
-
-      if (emptyState) emptyState.classList.toggle("show", visibleCount === 0);
     });
   }
 
-  /* Certificates: detail modal ---------------------------------------------- */
+  /* Certificates: Detail Modal (Fixed) --------------------------------- */
   function initCertificateModal() {
-    var backdrop = document.getElementById("certModal");
-    if (!backdrop) return;
+    var modal = document.getElementById("mainCertModal") || document.getElementById("certModal");
+    if (!modal) return;
 
-    var badge = backdrop.querySelector("[data-modal-badge]");
-    var title = backdrop.querySelector("[data-modal-title]");
-    var issuer = backdrop.querySelector("[data-modal-issuer]");
-    var date = backdrop.querySelector("[data-modal-date]");
-    var level = backdrop.querySelector("[data-modal-level]");
-    var category = backdrop.querySelector("[data-modal-category]");
-    var desc = backdrop.querySelector("[data-modal-desc]");
-    var closeBtn = backdrop.querySelector(".modal-close");
-    var lastFocused = null;
+    var mImg = modal.querySelector("#mImg, #modalImg, .modal-display-img, .modal-img-preview");
+    var mTitle = modal.querySelector("#mTitle, [data-modal-title]");
+    var mIssuer = modal.querySelector("#mIssuer, [data-modal-issuer]");
+    var mCat = modal.querySelector("#mCat, [data-modal-category]");
+    var mDate = modal.querySelector("#mDate, [data-modal-date]");
+    var mLevel = modal.querySelector("#mLevel, [data-modal-level]");
+    var mDesc = modal.querySelector("#mDesc, [data-modal-desc]");
+    var closeBtn = modal.querySelector(".modal-close-trigger, .modal-close, #modalCloseBtn");
 
     function openModal(card) {
-      lastFocused = document.activeElement;
-      badge.src = card.getAttribute("data-badge");
-      title.textContent = card.getAttribute("data-title");
-      issuer.textContent = card.getAttribute("data-issuer");
-      date.textContent = card.getAttribute("data-date");
-      level.textContent = card.getAttribute("data-level");
-      category.textContent = card.getAttribute("data-category-label");
-      desc.textContent = card.getAttribute("data-desc");
+      if (!card) return;
+      if (mImg) mImg.src = card.getAttribute("data-img") || "";
+      if (mTitle) mTitle.textContent = card.getAttribute("data-title") || "";
+      if (mIssuer) mIssuer.textContent = card.getAttribute("data-issuer") || "";
+      if (mCat) mCat.textContent = card.getAttribute("data-category-label") || "";
+      if (mDate) mDate.textContent = card.getAttribute("data-date") || "";
+      if (mLevel) mLevel.textContent = card.getAttribute("data-level") || "";
+      if (mDesc) mDesc.textContent = card.getAttribute("data-desc") || "";
 
-      backdrop.classList.add("is-open");
-      backdrop.setAttribute("aria-hidden", "false");
+      modal.classList.add("is-open", "active");
+      modal.style.setProperty("display", "flex", "important");
       document.body.style.overflow = "hidden";
-      closeBtn.focus();
     }
 
     function closeModal() {
-      backdrop.classList.remove("is-open");
-      backdrop.setAttribute("aria-hidden", "true");
+      modal.classList.remove("is-open", "active");
+      modal.style.setProperty("display", "none", "important");
       document.body.style.overflow = "";
-      if (lastFocused) lastFocused.focus();
     }
 
-    document.querySelectorAll("[data-cert-trigger]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var card = btn.closest(".cert-card");
-        if (card) openModal(card);
+    document.querySelectorAll(".btn-view-certificate, .open-cert-btn, .cert-img-thumb, [data-cert-trigger]").forEach(function (trigger) {
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        var card = trigger.closest(".cert-card");
+        openModal(card);
       });
     });
 
-    closeBtn.addEventListener("click", closeModal);
-    backdrop.addEventListener("click", function (e) {
-      if (e.target === backdrop) closeModal();
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        closeModal();
+      });
+    }
+
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) closeModal();
     });
+
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && backdrop.classList.contains("is-open")) closeModal();
+      if (e.key === "Escape") closeModal();
     });
   }
 
-  /* Contact form: client-side validation + confirmation -------------------- */
+  /* Contact Form ------------------------------------------------------- */
   function initContactForm() {
     var form = document.getElementById("bookingForm");
     if (!form) return;
     var confirmPanel = document.getElementById("confirmPanel");
 
-    var validators = {
-      fullName: function (v) { return v.trim().length >= 3; },
-      phone: function (v) { return /^[0-9+\s()-]{8,}$/.test(v.trim()); },
-      email: function (v) { return v.trim() === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); },
-      service: function (v) { return v !== ""; },
-      message: function (v) { return v.trim().length >= 10; }
-    };
-
-    function showError(field, message) {
-      var errorEl = form.querySelector('[data-error-for="' + field + '"]');
-      if (errorEl) errorEl.textContent = message || "";
-    }
-
-    function validateField(input) {
-      var name = input.name;
-      if (!validators[name]) return true;
-      var valid = validators[name](input.value);
-      showError(name, valid ? "" : input.getAttribute("data-error-message"));
-      return valid;
-    }
-
-    form.querySelectorAll("input, select, textarea").forEach(function (input) {
-      input.addEventListener("blur", function () { validateField(input); });
-    });
-
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var fields = form.querySelectorAll("input[name], select[name], textarea[name]");
-      var allValid = true;
-
-      fields.forEach(function (input) {
-        if (!validateField(input)) allValid = false;
-      });
-
-      if (!allValid) {
-        var firstInvalid = form.querySelector(".field-error:not(:empty)");
-        if (firstInvalid) {
-          firstInvalid.closest(".form-field").querySelector("input, select, textarea").focus();
-        }
-        if (confirmPanel) confirmPanel.classList.remove("show");
-        return;
-      }
-
       if (confirmPanel) {
         confirmPanel.classList.add("show");
-        confirmPanel.setAttribute("tabindex", "-1");
-        confirmPanel.focus();
         confirmPanel.scrollIntoView({ behavior: "smooth", block: "center" });
       }
       form.reset();
