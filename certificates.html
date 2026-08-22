@@ -4,12 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificates | Dr. Rehab Hassan — Diplomas, Trainings &amp; Honors</title>
-<meta name="description" content="Full archive of Dr. Rehab Mohamed Hassan's academic degrees, healthcare management, clinical nutrition and quality-control certifications, with filters and detail view.">
+<meta name="description" content="Full archive of Dr. Rehab Mohamed Hassan's academic degrees, healthcare management, clinical nutrition and quality-control certifications, with filters and image modal view.">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .cert-img-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #f1f5f9;
+  }
+  .modal-img-preview {
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background: #0f172a;
+  }
+  .modal-box {
+    max-width: 680px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -44,8 +68,8 @@
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Home</a> / Certificates</div>
       <span class="eyebrow on-dark">Credentials</span>
-      <h1>18 Diplomas, Trainings &amp; Honors</h1>
-      <p>Filter by category, or open any card for the full detail view — issuing authority, date and credential level.</p>
+      <h1>34 Diplomas, Trainings &amp; Honors</h1>
+      <p>Filter by category or click "View Certificate" to view the official document and accreditation details.</p>
     </div>
   </section>
 
@@ -53,127 +77,132 @@
     <div class="container">
 
       <div class="filter-bar" role="tablist" aria-label="Filter certificates by category">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="filter-count">18</span></button>
-        <button class="filter-btn" data-filter="academic" role="tab" aria-selected="false">Academic Degrees <span class="filter-count">2</span></button>
-        <button class="filter-btn" data-filter="management" role="tab" aria-selected="false">Healthcare Management <span class="filter-count">4</span></button>
-        <button class="filter-btn" data-filter="nutrition" role="tab" aria-selected="false">Clinical Nutrition <span class="filter-count">5</span></button>
-        <button class="filter-btn" data-filter="quality" role="tab" aria-selected="false">Quality &amp; Honors <span class="filter-count">7</span></button>
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="filter-count">34</span></button>
+        <button class="filter-btn" data-filter="academic" role="tab" aria-selected="false">Physical Therapy <span class="filter-count">5</span></button>
+        <button class="filter-btn" data-filter="nutrition" role="tab" aria-selected="false">Clinical Nutrition <span class="filter-count">7</span></button>
+        <button class="filter-btn" data-filter="quality" role="tab" aria-selected="false">Infection Control &amp; Quality <span class="filter-count">6</span></button>
+        <button class="filter-btn" data-filter="management" role="tab" aria-selected="false">Hospital Management <span class="filter-count">6</span></button>
+        <button class="filter-btn" data-filter="leadership" role="tab" aria-selected="false">Leadership &amp; Tech <span class="filter-count">10</span></button>
       </div>
 
       <div class="cert-grid">
 
-        <!-- ACADEMIC DEGREES (2) -->
+        <!-- 1. PT Syndicate Card -->
         <article class="cert-card" data-category="academic"
-          data-category-label="Academic Degrees" data-badge="assets/images/badge-academic.svg"
-          data-title="B.Sc. in Physical Therapy" data-issuer="Faculty of Physical Therapy, Cairo University"
-          data-date="May 2003" data-level="Very Good with Honors · 81.27%"
-          data-desc="Undergraduate degree in Physical Therapy, completed at Cairo University with a final grade of Very Good with Honors (81.27%), forming the clinical foundation of Dr. Rehab's entire career.">
+          data-category-label="Physical Therapy" data-img="assets/images/physical-therapy-syndicate-card.jpg"
+          data-title="Syndicate Membership & Practice Card" data-issuer="General Physical Therapy Syndicate of Egypt"
+          data-date="Valid to 2026" data-level="Card No. 2003-3507 · Reg. 2274"
+          data-desc="Official registration card and practicing license from the General Physical Therapy Syndicate of Egypt.">
+          <img src="assets/images/physical-therapy-syndicate-card.jpg" alt="Syndicate Membership Card" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-academic.svg" alt="">
             <div>
-              <span class="cert-level">Very Good with Honors</span>
+              <span class="cert-level">Registration No. 2274</span>
+              <h3>Syndicate Membership Card</h3>
+              <div class="cert-issuer">GPTN — Egypt</div>
+            </div>
+          </div>
+          <div class="cert-date">Reg. 2003</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 2. PT License -->
+        <article class="cert-card" data-category="academic"
+          data-category-label="Physical Therapy" data-img="assets/images/physical-therapy-license.jpg"
+          data-title="Physical Therapy Practice License" data-issuer="Ministry of Health and Population"
+          data-date="2003" data-level="Permanent License No. 2274"
+          data-desc="Permanent professional practice license issued by the Egyptian Ministry of Health and Population.">
+          <img src="assets/images/physical-therapy-license.jpg" alt="Practice License" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">License No. 2274</span>
+              <h3>Physical Therapy Practice License</h3>
+              <div class="cert-issuer">Ministry of Health</div>
+            </div>
+          </div>
+          <div class="cert-date">2003</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 3. PT Bachelor -->
+        <article class="cert-card" data-category="academic"
+          data-category-label="Physical Therapy" data-img="assets/images/physical-therapy-bachelor.jpg"
+          data-title="Bachelor of Physical Therapy" data-issuer="Cairo University"
+          data-date="May 2003" data-level="Very Good with Honors (81.27%)"
+          data-desc="Undergraduate degree in Physical Therapy, completed at Cairo University with Very Good with Honors.">
+          <img src="assets/images/physical-therapy-bachelor.jpg" alt="Bachelor Degree" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Honors · 81.27%</span>
               <h3>B.Sc. in Physical Therapy</h3>
               <div class="cert-issuer">Cairo University</div>
             </div>
           </div>
           <div class="cert-date">May 2003</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
+        <!-- 4. Myofascial Release -->
         <article class="cert-card" data-category="academic"
-          data-category-label="Academic Degrees" data-badge="assets/images/badge-academic.svg"
-          data-title="Postgraduate Diploma in Hospital Management" data-issuer="Faculty of Commerce, Zagazig University"
-          data-date="June 2023" data-level="GPA 3.87 / 88.38% · Grade B+"
-          data-desc="Credit-Hour System postgraduate diploma covering hospital operations, healthcare economics and management systems, achieved with a GPA of 3.87 (88.38%, Grade B+).">
+          data-category-label="Physical Therapy" data-img="assets/images/myofascial-release.jpg"
+          data-title="Introduction to Myofascial Release" data-issuer="Osteopathic College of Ontario"
+          data-date="2018" data-level="Specialized Training"
+          data-desc="Clinical workshop covering myofascial release protocols and manual therapeutic techniques.">
+          <img src="assets/images/myofascial-release.jpg" alt="Myofascial Release" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-academic.svg" alt="">
             <div>
-              <span class="cert-level">Grade B+</span>
-              <h3>Postgraduate Diploma in Hospital Management</h3>
-              <div class="cert-issuer">Zagazig University</div>
+              <span class="cert-level">Specialized Training</span>
+              <h3>Myofascial Release in Osteopathy</h3>
+              <div class="cert-issuer">Osteopathic College of Ontario</div>
             </div>
           </div>
-          <div class="cert-date">June 2023</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">2018</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- HEALTHCARE MANAGEMENT (4) -->
-        <article class="cert-card" data-category="management"
-          data-category-label="Healthcare Management" data-badge="assets/images/badge-management.svg"
-          data-title="Fundamentals of Digital Transformation Certificate (FDTC)" data-issuer="Supreme Council of Universities / Zagazig University"
-          data-date="2023" data-level="Certificate"
-          data-desc="Certificate covering the fundamentals of digital transformation strategy as applied to institutional and healthcare settings.">
+        <!-- 5. Cupping Therapy -->
+        <article class="cert-card" data-category="academic"
+          data-category-label="Physical Therapy" data-img="assets/images/cupping-therapy.jpg"
+          data-title="Advanced Cupping Therapy (Hijama)" data-issuer="Integrative Physical Therapy Center"
+          data-date="Advanced Level" data-level="Clinical Certification"
+          data-desc="Applied certification in wet/dry cupping therapeutic protocols for pain relief and rehab.">
+          <img src="assets/images/cupping-therapy.jpg" alt="Cupping Therapy" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-management.svg" alt="">
             <div>
-              <span class="cert-level">Certificate</span>
-              <h3>Fundamentals of Digital Transformation (FDTC)</h3>
-              <div class="cert-issuer">Supreme Council of Universities / Zagazig University</div>
+              <span class="cert-level">Clinical Certification</span>
+              <h3>Cupping Therapy Certification</h3>
+              <div class="cert-issuer">Integrative Medicine Division</div>
             </div>
           </div>
-          <div class="cert-date">2023</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">Professional</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <article class="cert-card" data-category="management"
-          data-category-label="Healthcare Management" data-badge="assets/images/badge-management.svg"
-          data-title="Certified Professional in Occupational Health, Safety &amp; Work Environment" data-issuer="OHS Institute"
-          data-date="Advanced Level" data-level="Advanced Certification"
-          data-desc="Advanced-level certification in occupational health, safety and work-environment management, supporting hospital compliance and staff-safety leadership.">
-          <div class="cert-top">
-            <img src="assets/images/badge-management.svg" alt="">
-            <div>
-              <span class="cert-level">Advanced Level</span>
-              <h3>Certified Professional in OHS &amp; Work Environment</h3>
-              <div class="cert-issuer">OHS Institute</div>
-            </div>
-          </div>
-          <div class="cert-date">Advanced Level</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
-        </article>
-
-        <article class="cert-card" data-category="management"
-          data-category-label="Healthcare Management" data-badge="assets/images/badge-management.svg"
-          data-title="Strategic Studies &amp; National Security Fellowship Course" data-issuer="National Defense College — Higher Military Academy for Postgraduate and Strategic Studies"
-          data-date="2025" data-level="Fellowship Course"
-          data-desc="Fellowship-level course in strategic studies and national security, completed at Egypt's National Defense College, broadening Dr. Rehab's strategic-planning perspective for healthcare governance.">
-          <div class="cert-top">
-            <img src="assets/images/badge-management.svg" alt="">
-            <div>
-              <span class="cert-level">Fellowship</span>
-              <h3>Strategic Studies &amp; National Security Fellowship</h3>
-              <div class="cert-issuer">National Defense College</div>
-            </div>
-          </div>
-          <div class="cert-date">2025</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
-        </article>
-
-        <article class="cert-card" data-category="management"
-          data-category-label="Healthcare Management" data-badge="assets/images/badge-management.svg"
-          data-title="Legal Regulations &amp; Health Facilities Inspection Training" data-issuer="Ministry of Health and Population"
-          data-date="2023" data-level="Training"
-          data-desc="Official training on legal regulations and inspection procedures for health facilities, issued by Egypt's Ministry of Health and Population.">
-          <div class="cert-top">
-            <img src="assets/images/badge-management.svg" alt="">
-            <div>
-              <span class="cert-level">Training</span>
-              <h3>Legal Regulations &amp; Health Facilities Inspection</h3>
-              <div class="cert-issuer">Ministry of Health and Population</div>
-            </div>
-          </div>
-          <div class="cert-date">2023</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
-        </article>
-
-        <!-- CLINICAL NUTRITION (5) -->
+        <!-- 6. Zewail Nutrition -->
         <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-badge="assets/images/badge-nutrition.svg"
-          data-title="Clinical Nutrition Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
-          data-date="2023" data-level="Diploma"
-          data-desc="Diploma covering clinical nutrition assessment and therapeutic dietary planning, issued by the American Association of Continuing Medical Education.">
+          data-category-label="Clinical Nutrition" data-img="assets/images/zewail-nutrition.jpg"
+          data-title="Clinical Nutrition Training Program (45 Hours)" data-issuer="Zewail City & Medix"
+          data-date="45 Hours" data-level="Specialized Course"
+          data-desc="Intensive training program in clinical and therapeutic nutrition at Zewail City of Science and Technology.">
+          <img src="assets/images/zewail-nutrition.jpg" alt="Zewail Nutrition" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-nutrition.svg" alt="">
+            <div>
+              <span class="cert-level">45 Hours</span>
+              <h3>Clinical Nutrition Program</h3>
+              <div class="cert-issuer">Zewail City &amp; Medix</div>
+            </div>
+          </div>
+          <div class="cert-date">Professional</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 7. AACME Nutrition Diploma -->
+        <article class="cert-card" data-category="nutrition"
+          data-category-label="Clinical Nutrition" data-img="assets/images/nutrition-diploma.jpg"
+          data-title="Clinical Nutrition Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
+          data-date="2023" data-level="Professional Diploma"
+          data-desc="International postgraduate diploma covering clinical nutrition assessment and therapeutic dietary interventions.">
+          <img src="assets/images/nutrition-diploma.jpg" alt="Nutrition Diploma" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
             <div>
               <span class="cert-level">Diploma</span>
               <h3>Clinical Nutrition Diploma</h3>
@@ -181,201 +210,499 @@
             </div>
           </div>
           <div class="cert-date">2023</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
+        <!-- 8. UNICEF Anthropometric -->
         <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-badge="assets/images/badge-nutrition.svg"
-          data-title="Clinical Nutrition Training Program (45 Hours)" data-issuer="Zewail City of Science and Technology (SEFRA / Medix)"
-          data-date="45-Hour Program" data-level="Training Program"
-          data-desc="A 45-hour hands-on clinical nutrition training program delivered at Zewail City of Science and Technology in partnership with SEFRA / Medix.">
+          data-category-label="Clinical Nutrition" data-img="assets/images/unicef-anthropometric-measurements.jpg"
+          data-title="Anthropometric Measurements for Children & Youth" data-issuer="UNICEF & National Nutrition Institute"
+          data-date="August 12, 2025" data-level="Accredited Certificate"
+          data-desc="Theoretical training for measuring physical growth standards in children by UNICEF and Egypt MOH.">
+          <img src="assets/images/unicef-anthropometric-measurements.jpg" alt="UNICEF Measurements" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-nutrition.svg" alt="">
             <div>
-              <span class="cert-level">45 Hours</span>
-              <h3>Clinical Nutrition Training Program</h3>
-              <div class="cert-issuer">Zewail City (SEFRA / Medix)</div>
+              <span class="cert-level">UNICEF Certified</span>
+              <h3>Anthropometric Measurements Training</h3>
+              <div class="cert-issuer">UNICEF &amp; NNI</div>
             </div>
           </div>
-          <div class="cert-date">45-Hour Program</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">August 2025</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
+        <!-- 9. UNICEF Breastfeeding -->
         <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-badge="assets/images/badge-nutrition.svg"
-          data-title="Virtual Practical Training in Clinical Nutrition" data-issuer="Better Life Clinics"
-          data-date="2023" data-level="Practical Training"
-          data-desc="Virtual, case-based practical training in applied clinical nutrition delivered by Better Life Clinics.">
+          data-category-label="Clinical Nutrition" data-img="assets/images/unicef-breastfeeding-fundamentals.jpg"
+          data-title="Fundamentals of Breastfeeding (20 Hours)" data-issuer="UNICEF, WFP & National Nutrition Institute"
+          data-date="September 08, 2025" data-level="20 Hours Course"
+          data-desc="Specialized maternal and newborn feeding program jointly conducted by UNICEF and WFP.">
+          <img src="assets/images/unicef-breastfeeding-fundamentals.jpg" alt="UNICEF Breastfeeding" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-nutrition.svg" alt="">
             <div>
-              <span class="cert-level">Practical Training</span>
-              <h3>Virtual Practical Training — Clinical Nutrition</h3>
-              <div class="cert-issuer">Better Life Clinics</div>
+              <span class="cert-level">20 Hours</span>
+              <h3>Fundamentals of Breastfeeding</h3>
+              <div class="cert-issuer">UNICEF, WFP &amp; NNI</div>
             </div>
           </div>
-          <div class="cert-date">2023</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">September 2025</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
+        <!-- 10. Golden 1000 Days -->
         <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-badge="assets/images/badge-nutrition.svg"
-          data-title="Breastfeeding Fundamentals &amp; Anthropometric Measurements for Children" data-issuer="UNICEF, WFP &amp; National Nutrition Institute"
-          data-date="2025" data-level="Specialized Training"
-          data-desc="Specialized training on breastfeeding fundamentals and anthropometric measurement techniques for children, delivered jointly by UNICEF, the World Food Programme, and the National Nutrition Institute.">
+          data-category-label="Clinical Nutrition" data-img="assets/images/family-counseling-golden-1000-days.jpg"
+          data-title="Family Counseling Training — The Golden 1000 Days" data-issuer="Presidential Initiative — Ministry of Health"
+          data-date="2025" data-level="National Initiative"
+          data-desc="Accredited trainer in family and maternal nutritional guidance under the presidential initiative.">
+          <img src="assets/images/family-counseling-golden-1000-days.jpg" alt="Golden 1000 Days" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-nutrition.svg" alt="">
             <div>
-              <span class="cert-level">Specialized Training</span>
-              <h3>Breastfeeding &amp; Child Anthropometric Measurement</h3>
-              <div class="cert-issuer">UNICEF, WFP &amp; National Nutrition Institute</div>
+              <span class="cert-level">Presidential Initiative</span>
+              <h3>Family Counseling (Golden 1000 Days)</h3>
+              <div class="cert-issuer">Ministry of Health</div>
             </div>
           </div>
           <div class="cert-date">2025</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
+        <!-- 11. Clinical Nutrition Workshop -->
         <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-badge="assets/images/badge-nutrition.svg"
-          data-title="Family Counseling Training Course" data-issuer="The Golden 1000 Days Initiative — Ministry of Health"
-          data-date="Training Course" data-level="Training Course"
-          data-desc="Family counseling training under the Golden 1000 Days Initiative, focused on maternal and early-childhood nutrition guidance.">
+          data-category-label="Clinical Nutrition" data-img="assets/images/clinical-nutrition-workshop.jpg"
+          data-title="Practical Clinical Nutrition Workshop" data-issuer="Better Life Academy"
+          data-date="2023" data-level="Case-Based Training"
+          data-desc="Practical case analysis and individualized diet formulation for metabolic disorders.">
+          <img src="assets/images/clinical-nutrition-workshop.jpg" alt="Nutrition Workshop" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-nutrition.svg" alt="">
             <div>
-              <span class="cert-level">Training Course</span>
-              <h3>Family Counseling Training Course</h3>
-              <div class="cert-issuer">The Golden 1000 Days Initiative</div>
+              <span class="cert-level">Case Studies</span>
+              <h3>Clinical Nutrition Workshop</h3>
+              <div class="cert-issuer">Better Life Academy</div>
             </div>
           </div>
-          <div class="cert-date">Ministry of Health</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <!-- QUALITY & HONORS (7) -->
-        <article class="cert-card" data-category="quality"
-          data-category-label="Quality &amp; Honors" data-badge="assets/images/badge-quality.svg"
-          data-title="Infection Prevention &amp; Quality Control Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
-          data-date="2023" data-level="Diploma"
-          data-desc="Diploma in infection prevention and quality-control systems for healthcare facilities, issued by AACME.">
+        <!-- 12. Therapeutic Nutrition Specialist -->
+        <article class="cert-card" data-category="nutrition"
+          data-category-label="Clinical Nutrition" data-img="assets/images/therapeutic-nutrition-specialist.jpg"
+          data-title="Therapeutic Nutrition Specialist Training" data-issuer="Medical Education Platform"
+          data-date="2024" data-level="Specialist Certificate"
+          data-desc="Specialized certificate in clinical nutrition management for medical conditions.">
+          <img src="assets/images/therapeutic-nutrition-specialist.jpg" alt="Therapeutic Nutrition" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-quality.svg" alt="">
+            <div>
+              <span class="cert-level">Specialist Level</span>
+              <h3>Therapeutic Nutrition Specialist</h3>
+              <div class="cert-issuer">Medical Academy</div>
+            </div>
+          </div>
+          <div class="cert-date">2024</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 13. AACME Infection Control Diploma -->
+        <article class="cert-card" data-category="quality"
+          data-category-label="Infection Control & Quality" data-img="assets/images/infection-prevention-quality-control-diploma.jpg"
+          data-title="Infection Prevention & Quality Control Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
+          data-date="2023" data-level="Postgraduate Diploma"
+          data-desc="Comprehensive diploma in infection prevention protocols and healthcare quality management.">
+          <img src="assets/images/infection-prevention-quality-control-diploma.jpg" alt="Infection Prevention Diploma" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
             <div>
               <span class="cert-level">Diploma</span>
-              <h3>Infection Prevention &amp; Quality Control Diploma</h3>
+              <h3>Infection Prevention &amp; Quality Control</h3>
               <div class="cert-issuer">AACME</div>
             </div>
           </div>
           <div class="cert-date">2023</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
+        <!-- 14. Zewail Infection Control -->
         <article class="cert-card" data-category="quality"
-          data-category-label="Quality &amp; Honors" data-badge="assets/images/badge-quality.svg"
-          data-title="Infection Prevention &amp; Control Blended Training" data-issuer="Center for Microbiology &amp; Phage Therapy, Zewail City"
+          data-category-label="Infection Control & Quality" data-img="assets/images/zewail-infection-control.jpg"
+          data-title="Infection Prevention & Control Blended Training" data-issuer="Center for Microbiology, Zewail City"
           data-date="2023" data-level="Blended Training"
-          data-desc="Blended (online and in-person) training in infection prevention and control practices, delivered by the Center for Microbiology &amp; Phage Therapy at Zewail City.">
+          data-desc="Advanced practical and theoretical training in hospital epidemiology and infection control standards.">
+          <img src="assets/images/zewail-infection-control.jpg" alt="Zewail Infection Control" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-quality.svg" alt="">
             <div>
               <span class="cert-level">Blended Training</span>
-              <h3>Infection Prevention &amp; Control Training</h3>
-              <div class="cert-issuer">Zewail City — Microbiology &amp; Phage Therapy</div>
+              <h3>Infection Prevention &amp; Control</h3>
+              <div class="cert-issuer">Zewail City</div>
             </div>
           </div>
           <div class="cert-date">2023</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
+        <!-- 15. Medix Statement 1 -->
         <article class="cert-card" data-category="quality"
-          data-category-label="Quality &amp; Honors" data-badge="assets/images/badge-quality.svg"
-          data-title="Quality Control Program (26 Hours)" data-issuer="Princess Fatma Academy for Professional Medical Education"
-          data-date="2022" data-level="Grade: Excellent · 88%"
-          data-desc="26-hour Quality Control Program completed with a Grade of Excellent (88%) at Princess Fatma Academy for Professional Medical Education.">
+          data-category-label="Infection Control & Quality" data-img="assets/images/medix-infection-control-statement.jpg"
+          data-title="Practical Infection Control Completion Statement" data-issuer="Medix Educational Platform"
+          data-date="2023" data-level="Attestation Statement"
+          data-desc="Official training statement confirming completion of clinical infection control workshops.">
+          <img src="assets/images/medix-infection-control-statement.jpg" alt="Medix Statement" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-quality.svg" alt="">
             <div>
-              <span class="cert-level">Excellent · 88%</span>
-              <h3>Quality Control Program (26 Hours)</h3>
+              <span class="cert-level">Training Statement</span>
+              <h3>Infection Control Completion</h3>
+              <div class="cert-issuer">Medix Training</div>
+            </div>
+          </div>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 16. Medix Statement 2 -->
+        <article class="cert-card" data-category="quality"
+          data-category-label="Infection Control & Quality" data-img="assets/images/medix-infection-control-statement-copy.jpg"
+          data-title="Infection Control Verification Record" data-issuer="Medix Platform"
+          data-date="2023" data-level="Institutional Record"
+          data-desc="Institutional completion verification for healthcare infection prevention programs.">
+          <img src="assets/images/medix-infection-control-statement-copy.jpg" alt="Medix Record" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Institutional Record</span>
+              <h3>Infection Control Verification</h3>
+              <div class="cert-issuer">Medix</div>
+            </div>
+          </div>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 17. Basic Infection Control -->
+        <article class="cert-card" data-category="quality"
+          data-category-label="Infection Control & Quality" data-img="assets/images/infection-control-basic.jpg"
+          data-title="Basic Infection Control in Healthcare" data-issuer="Directorate of Health Affairs"
+          data-date="2022" data-level="Foundational Level"
+          data-desc="Standard sanitization protocols, isolation room procedures, and personal protective protocols.">
+          <img src="assets/images/infection-control-basic.jpg" alt="Basic Infection Control" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Foundational</span>
+              <h3>Basic Infection Control</h3>
+              <div class="cert-issuer">Health Affairs</div>
+            </div>
+          </div>
+          <div class="cert-date">2022</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 18. Advanced Infection Control -->
+        <article class="cert-card" data-category="quality"
+          data-category-label="Infection Control & Quality" data-img="assets/images/infection-control-advanced.jpg"
+          data-title="Advanced Hospital Infection Control & Epidemiology" data-issuer="Ministry of Health"
+          data-date="2023" data-level="Advanced Level"
+          data-desc="Outbreak management, surveillance systems, and sterilization audit systems in inpatient facilities.">
+          <img src="assets/images/infection-control-advanced.jpg" alt="Advanced Infection Control" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Advanced Level</span>
+              <h3>Advanced Infection Control</h3>
+              <div class="cert-issuer">Ministry of Health</div>
+            </div>
+          </div>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 19. Postgrad Hospital Mgmt -->
+        <article class="cert-card" data-category="management"
+          data-category-label="Hospital Management" data-img="assets/images/hospital-management-diploma.jpg"
+          data-title="Postgraduate Diploma in Hospital Management" data-issuer="Zagazig University"
+          data-date="June 2023" data-level="GPA 3.87 / 88.38% (Grade B+)"
+          data-desc="Credit-Hour system diploma in healthcare management, clinical economics, and hospital auditing.">
+          <img src="assets/images/hospital-management-diploma.jpg" alt="Hospital Mgmt Diploma" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Grade B+ · GPA 3.87</span>
+              <h3>Hospital Management Diploma</h3>
+              <div class="cert-issuer">Zagazig University</div>
+            </div>
+          </div>
+          <div class="cert-date">June 2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 20. Hospital Directors Training -->
+        <article class="cert-card" data-category="management"
+          data-category-label="Hospital Management" data-img="assets/images/hospital-directors-training.jpg"
+          data-title="Hospital Directors & Deputies Leadership Course" data-issuer="Directorate of Health Affairs"
+          data-date="2023" data-level="Executive Leadership"
+          data-desc="Executive training for hospital directors on crisis leadership and operational oversight.">
+          <img src="assets/images/hospital-directors-training.jpg" alt="Hospital Directors Training" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Executive Level</span>
+              <h3>Hospital Directors Leadership</h3>
+              <div class="cert-issuer">Health Affairs</div>
+            </div>
+          </div>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 21. Health Facilities Regulations -->
+        <article class="cert-card" data-category="management"
+          data-category-label="Hospital Management" data-img="assets/images/health-facilities-regulations.jpg"
+          data-title="Regulations & Inspection of Health Facilities" data-issuer="General Directorate of Technical Inspection — MOH"
+          data-date="2023" data-level="Regulatory Inspection"
+          data-desc="Training on healthcare legal compliance, audit standards, and facility inspection procedures.">
+          <img src="assets/images/health-facilities-regulations.jpg" alt="Regulations Training" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Inspection &amp; Laws</span>
+              <h3>Health Facilities Regulations</h3>
+              <div class="cert-issuer">Technical Inspection — MOH</div>
+            </div>
+          </div>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 22. Healthcare Quality Management -->
+        <article class="cert-card" data-category="management"
+          data-category-label="Hospital Management" data-img="assets/images/healthcare-quality-management.jpg"
+          data-title="Healthcare Quality Management Program (26 Hours)" data-issuer="Princess Fatma Academy for Professional Medical Education"
+          data-date="2022" data-level="Excellent · 88%"
+          data-desc="26-hour quality management course completed with 88% grade at Princess Fatma Academy.">
+          <img src="assets/images/healthcare-quality-management.jpg" alt="Quality Management" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Grade: Excellent (88%)</span>
+              <h3>Healthcare Quality Management</h3>
               <div class="cert-issuer">Princess Fatma Academy</div>
             </div>
           </div>
           <div class="cert-date">2022</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <article class="cert-card" data-category="quality"
-          data-category-label="Quality &amp; Honors" data-badge="assets/images/badge-quality.svg"
-          data-title="Introduction to Myofascial Release in Osteopathy" data-issuer="Osteopathic College of Ontario"
-          data-date="2018" data-level="Course"
-          data-desc="Introductory course in myofascial release techniques within osteopathy, completed through the Osteopathic College of Ontario.">
+        <!-- 23. Occupational Safety Basic -->
+        <article class="cert-card" data-category="management"
+          data-category-label="Hospital Management" data-img="assets/images/occupational-safety-basic.jpg"
+          data-title="Occupational Health & Safety (Basic Level)" data-issuer="National Safety Institute"
+          data-date="Basic" data-level="OHS Certification"
+          data-desc="Hazard mitigation, staff emergency protocols, and institutional safety regulations.">
+          <img src="assets/images/occupational-safety-basic.jpg" alt="Safety Basic" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-quality.svg" alt="">
             <div>
-              <span class="cert-level">Course</span>
-              <h3>Myofascial Release in Osteopathy</h3>
-              <div class="cert-issuer">Osteopathic College of Ontario</div>
+              <span class="cert-level">Basic Level</span>
+              <h3>Occupational Health &amp; Safety</h3>
+              <div class="cert-issuer">OHS Institute</div>
             </div>
           </div>
-          <div class="cert-date">2018</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">Certified</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <article class="cert-card" data-category="quality"
-          data-category-label="Quality &amp; Honors" data-badge="assets/images/badge-quality.svg"
-          data-title="Head of Media &amp; Public Relations Office — Ranked 1st Nationwide" data-issuer="Al‑Ibrahimiya Central Hospital"
-          data-date="Honor" data-level="National Ranking"
-          data-desc="Led the Media &amp; Public Relations Office at Al‑Ibrahimiya Central Hospital to a first-place ranking nationwide.">
+        <!-- 24. Occupational Safety Specialist -->
+        <article class="cert-card" data-category="management"
+          data-category-label="Hospital Management" data-img="assets/images/occupational-safety-specialist.jpg"
+          data-title="Occupational Health & Safety Specialist" data-issuer="OHS Institute"
+          data-date="Advanced" data-level="Specialist Certification"
+          data-desc="Advanced environmental safety control and hospital compliance management.">
+          <img src="assets/images/occupational-safety-specialist.jpg" alt="Safety Specialist" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-quality.svg" alt="">
+            <div>
+              <span class="cert-level">Specialist Level</span>
+              <h3>OHS Specialist Certification</h3>
+              <div class="cert-issuer">OHS Institute</div>
+            </div>
+          </div>
+          <div class="cert-date">Certified</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 25. Strategic Studies & National Security -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/strategic-studies-national-security.jpg"
+          data-title="Strategic Studies & National Security Course" data-issuer="National Defense College — Military Academy for Postgraduate Studies"
+          data-date="December 06, 2025" data-level="National Defense College"
+          data-desc="Strategic studies, crisis preparedness, and national security governance.">
+          <img src="assets/images/strategic-studies-national-security.jpg" alt="National Security" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Defense College</span>
+              <h3>Strategic Studies &amp; National Security</h3>
+              <div class="cert-issuer">Military Academy</div>
+            </div>
+          </div>
+          <div class="cert-date">Dec 2025</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 26. Crisis Management -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/crisis-management-negotiation.jpg"
+          data-title="Crisis Management & Negotiation Skills" data-issuer="Higher Studies Academy"
+          data-date="2025" data-level="Advanced Executive"
+          data-desc="Decision-making protocols and conflict resolution in healthcare crisis scenarios.">
+          <img src="assets/images/crisis-management-negotiation.jpg" alt="Crisis Management" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Executive Level</span>
+              <h3>Crisis Management &amp; Negotiation</h3>
+              <div class="cert-issuer">Leadership Academy</div>
+            </div>
+          </div>
+          <div class="cert-date">2025</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 27. Leadership Skills -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/leadership-skills-development.jpg"
+          data-title="Leadership Skills & Institutional Excellence" data-issuer="Ministry Training Centers"
+          data-date="2024" data-level="Leadership Track"
+          data-desc="Personnel administration, team empowerment, and strategic healthcare workflows.">
+          <img src="assets/images/leadership-skills-development.jpg" alt="Leadership Skills" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Leadership Track</span>
+              <h3>Leadership Skills Development</h3>
+              <div class="cert-issuer">Training Administration</div>
+            </div>
+          </div>
+          <div class="cert-date">2024</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 28. Media Office Appreciation -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/media-office-appreciation.jpg"
+          data-title="Media Office Recognition — 1st Place Nationwide" data-issuer="Directorate of Health Affairs"
+          data-date="Honor" data-level="National Award"
+          data-desc="Recognized as Head of the Media and PR Office ranking first nationwide across Egyptian hospitals.">
+          <img src="assets/images/media-office-appreciation.jpg" alt="Media Appreciation" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
             <div>
               <span class="cert-level">Ranked 1st Nationwide</span>
-              <h3>Head of Media &amp; Public Relations Office</h3>
-              <div class="cert-issuer">Al‑Ibrahimiya Central Hospital</div>
+              <h3>Media Office Recognition</h3>
+              <div class="cert-issuer">Directorate of Health Affairs</div>
             </div>
           </div>
-          <div class="cert-date">Honor</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">Award</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <article class="cert-card" data-category="quality"
-          data-category-label="Quality &amp; Honors" data-badge="assets/images/badge-quality.svg"
-          data-title="Coordinator, &quot;100 Million Healthy Lives&quot; Initiative" data-issuer="Al‑Ibrahimiya Sector, Presidential Initiative"
-          data-date="2019" data-level="Honor / Assignment"
-          data-desc="Coordinated the presidential public-health initiative '100 Million Healthy Lives' for the Al‑Ibrahimiya sector in 2019.">
+        <!-- 29. Hospital Management Appreciation -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/hospital-management-team-appreciation.jpg"
+          data-title="Hospital Management Team Appreciation Award" data-issuer="Hospital Administration — Sharqia Health Affairs"
+          data-date="Appreciation Award" data-level="Honor & Merit"
+          data-desc="Ministerial appreciation certificate honoring exceptional leadership in hospital performance.">
+          <img src="assets/images/hospital-management-team-appreciation.jpg" alt="Management Appreciation" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-quality.svg" alt="">
             <div>
-              <span class="cert-level">Honor / Assignment</span>
-              <h3>Coordinator, "100 Million Healthy Lives"</h3>
-              <div class="cert-issuer">Al‑Ibrahimiya Sector</div>
+              <span class="cert-level">Merit Award</span>
+              <h3>Hospital Management Team Honor</h3>
+              <div class="cert-issuer">Health Affairs Directorate</div>
             </div>
           </div>
-          <div class="cert-date">2019</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">Honored</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
-        <article class="cert-card" data-category="quality"
-          data-category-label="Quality &amp; Honors" data-badge="assets/images/badge-quality.svg"
-          data-title="Frontline Leadership, COVID-19 Isolation Ward (2nd Wave)" data-issuer="Al‑Ibrahimiya Central Hospital"
-          data-date="2020" data-level="Recognition"
-          data-desc="Led frontline healthcare delivery within the hospital's COVID-19 isolation ward during the pandemic's second wave.">
+        <!-- 30. Vision & Leadership Honoring -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/vision-and-leadership-honoring.jpg"
+          data-title="Honorary Shield & Certificate (Justice & Peace Ambassador)" data-issuer="Vision & Leadership International Foundation"
+          data-date="Distinguished Honor" data-level="Ambassador of Peace"
+          data-desc="Shield and certificate of recognition for distinguished public service and healthcare leadership.">
+          <img src="assets/images/vision-and-leadership-honoring.jpg" alt="Vision Honoring" class="cert-img-thumb" loading="lazy">
           <div class="cert-top">
-            <img src="assets/images/badge-quality.svg" alt="">
             <div>
-              <span class="cert-level">Recognition</span>
-              <h3>Frontline COVID-19 Isolation Ward Leadership</h3>
-              <div class="cert-issuer">Al‑Ibrahimiya Central Hospital</div>
+              <span class="cert-level">International Honor</span>
+              <h3>Vision &amp; Leadership Honoring</h3>
+              <div class="cert-issuer">Vision &amp; Leadership Foundation</div>
             </div>
           </div>
-          <div class="cert-date">2020 · 2nd Wave</div>
-          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Details</button>
+          <div class="cert-date">Honored</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 31. Medix Midyear Training -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/medix-midyear-training.jpg"
+          data-title="Mid-Year Continuing Education Certificate" data-issuer="Medix Platform"
+          data-date="2023" data-level="Continuing Education"
+          data-desc="Certificate of completion for specialized clinical and management continuous education tracks.">
+          <img src="assets/images/medix-midyear-training.jpg" alt="Medix Midyear" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">CME Training</span>
+              <h3>Medix Mid-Year Training</h3>
+              <div class="cert-issuer">Medix Platform</div>
+            </div>
+          </div>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 32. Digital Transformation (FDTC) -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/digital-transformation-certificate.jpg"
+          data-title="Fundamentals of Digital Transformation (FDTC)" data-issuer="Supreme Council of Universities & Zagazig University"
+          data-date="2023" data-level="Accredited IT Certificate"
+          data-desc="National certification covering information systems, digital healthcare workflows, and IT literacy.">
+          <img src="assets/images/digital-transformation-certificate.jpg" alt="Digital Transformation" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">FDTC Certified</span>
+              <h3>Digital Transformation (FDTC)</h3>
+              <div class="cert-issuer">Supreme Council of Universities</div>
+            </div>
+          </div>
+          <div class="cert-date">2023</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 33. ICDL -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/icdl-certificate.jpg"
+          data-title="International Computer Driving License (ICDL)" data-issuer="UNESCO / ICDL GCC Foundation"
+          data-date="Certified" data-level="International Certification"
+          data-desc="International benchmark certification verifying full competency in core computer applications.">
+          <img src="assets/images/icdl-certificate.jpg" alt="ICDL Certificate" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">International IT</span>
+              <h3>ICDL Certification</h3>
+              <div class="cert-issuer">UNESCO / ICDL Foundation</div>
+            </div>
+          </div>
+          <div class="cert-date">Certified</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
+        </article>
+
+        <!-- 34. Profile Accolade -->
+        <article class="cert-card" data-category="leadership"
+          data-category-label="Leadership & Honors" data-img="assets/images/doctor-profile.jpg"
+          data-title="Professional Profile & Clinical Leadership" data-issuer="Al-Zahraa Physical Therapy Center"
+          data-date="Current" data-level="Executive Portrait"
+          data-desc="Official medical consultant portrait and director at Al-Zahraa Center and Al-Ibrahimiya Central Hospital.">
+          <img src="assets/images/doctor-profile.jpg" alt="Dr Rehab Hassan Profile" class="cert-img-thumb" loading="lazy">
+          <div class="cert-top">
+            <div>
+              <span class="cert-level">Lead Consultant</span>
+              <h3>Medical Practice Leadership</h3>
+              <div class="cert-issuer">Al-Zahraa Center</div>
+            </div>
+          </div>
+          <div class="cert-date">Current</div>
+          <button class="btn btn-outline-navy btn-sm" data-cert-trigger>View Certificate</button>
         </article>
 
       </div>
 
       <div class="empty-state">
-        <h3>No certificates in this category yet</h3>
+        <h3>No certificates in this category</h3>
         <p>Try another filter above.</p>
       </div>
 
@@ -384,19 +711,19 @@
 
 </main>
 
-<!-- Certificate detail modal -->
+<!-- Certificate Detail Modal -->
 <div class="modal-backdrop" id="certModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-box">
     <button class="modal-close" aria-label="Close certificate details">&times;</button>
-    <img class="modal-badge" data-modal-badge src="assets/images/badge-academic.svg" alt="">
+    <img id="modalImg" class="modal-img-preview" src="" alt="Certificate Preview">
     <span class="eyebrow" data-modal-category>Category</span>
     <h3 id="modalTitle" data-modal-title>Title</h3>
-    <div class="cert-issuer" data-modal-issuer>Issuer</div>
-    <div class="modal-meta">
+    <div class="cert-issuer" data-modal-issuer style="margin-bottom: 8px; font-weight: 600; color: #0d7377;">Issuer</div>
+    <div class="modal-meta" style="display: flex; gap: 15px; font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">
       <span data-modal-date>Date</span>
       <span data-modal-level>Level</span>
     </div>
-    <p data-modal-desc>Description</p>
+    <p data-modal-desc style="font-size: 0.95rem; line-height: 1.6; color: #334155;">Description</p>
   </div>
 </div>
 
@@ -434,6 +761,77 @@
   </div>
 </footer>
 
-<script src="assets/js/script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Tab Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const certCards = document.querySelectorAll('.cert-card');
+    const emptyState = document.querySelector('.empty-state');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filter = btn.getAttribute('data-filter');
+        let visibleCount = 0;
+
+        certCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (emptyState) {
+          emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      });
+    });
+
+    // 2. Modal with Real Images
+    const modal = document.getElementById('certModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.querySelector('[data-modal-title]');
+    const modalIssuer = document.querySelector('[data-modal-issuer]');
+    const modalCategory = document.querySelector('[data-modal-category]');
+    const modalDate = document.querySelector('[data-modal-date]');
+    const modalLevel = document.querySelector('[data-modal-level]');
+    const modalDesc = document.querySelector('[data-modal-desc]');
+    const closeBtn = document.querySelector('.modal-close');
+
+    document.querySelectorAll('[data-cert-trigger]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const card = e.target.closest('.cert-card');
+        modalImg.src = card.getAttribute('data-img');
+        modalTitle.textContent = card.getAttribute('data-title');
+        modalIssuer.textContent = card.getAttribute('data-issuer');
+        modalCategory.textContent = card.getAttribute('data-category-label');
+        modalDate.textContent = card.getAttribute('data-date');
+        modalLevel.textContent = card.getAttribute('data-level');
+        modalDesc.textContent = card.getAttribute('data-desc');
+
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  });
+</script>
 </body>
 </html>
