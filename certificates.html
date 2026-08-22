@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-  /* ضمان ظهور شبكة البطاقات بشكل منظم */
   .cert-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
@@ -29,6 +28,12 @@
     border: 1px solid #e2e8f0 !important;
     box-sizing: border-box !important;
   }
+  
+  /* كلاس الإخفاء الإجباري للفلترة */
+  .cert-card.is-hidden {
+    display: none !important;
+  }
+
   .cert-img-thumb {
     width: 100% !important;
     height: 200px !important;
@@ -46,14 +51,14 @@
     flex-direction: column !important;
   }
   .cert-title {
-    font-size: 1.1rem !important;
+    font-size: 1.05rem !important;
     font-weight: 700 !important;
     margin: 6px 0 !important;
     color: #0f172a !important;
     line-height: 1.4 !important;
   }
   .cert-issuer {
-    font-size: 0.9rem !important;
+    font-size: 0.88rem !important;
     color: #0d7377 !important;
     font-weight: 600 !important;
     margin-bottom: 6px !important;
@@ -64,7 +69,6 @@
     margin-bottom: 12px !important;
   }
   
-  /* زر View Certificate الواضح */
   .btn-view-certificate {
     width: 100% !important;
     display: block !important;
@@ -72,7 +76,7 @@
     color: #ffffff !important;
     text-align: center !important;
     padding: 10px 16px !important;
-    font-size: 0.95rem !important;
+    font-size: 0.92rem !important;
     font-weight: 600 !important;
     border-radius: 6px !important;
     border: none !important;
@@ -85,7 +89,7 @@
     color: #ffffff !important;
   }
 
-  /* نافذة العرض المنبثقة (Modal) */
+  /* Modal */
   #mainCertModal {
     display: none;
     position: fixed !important;
@@ -182,18 +186,18 @@
 
   <section class="section">
     <div class="container">
-      <div class="filter-bar" role="tablist" aria-label="Filter certificates by category">
-        <button class="filter-btn active" data-filter-target="all">All</button>
-        <button class="filter-btn" data-filter-target="physio">Physical Therapy</button>
-        <button class="filter-btn" data-filter-target="nutrition">Clinical Nutrition</button>
-        <button class="filter-btn" data-filter-target="infection">Infection Control &amp; Quality</button>
-        <button class="filter-btn" data-filter-target="management">Hospital Mgmt &amp; Safety</button>
-        <button class="filter-btn" data-filter-target="honors">Leadership &amp; Honors</button>
+      <div class="filter-bar" role="tablist" style="justify-content: center; margin-bottom: 2rem;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="physio">Physical Therapy</button>
+        <button class="filter-btn" data-filter="nutrition">Clinical Nutrition</button>
+        <button class="filter-btn" data-filter="infection">Infection Control &amp; Quality</button>
+        <button class="filter-btn" data-filter="management">Hospital Mgmt &amp; Safety</button>
+        <button class="filter-btn" data-filter="honors">Leadership &amp; Honors</button>
       </div>
 
       <div class="cert-grid" id="mainCertGrid">
 
-        <!-- 1. PT Syndicate Card -->
+        <!-- Physical Therapy -->
         <article class="cert-card" data-category="physio"
           data-img="assets/images/physical-therapy-syndicate-card.jpg"
           data-title="Syndicate Membership Card"
@@ -212,7 +216,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 2. Myofascial Release -->
         <article class="cert-card" data-category="physio"
           data-img="assets/images/myofascial-release.jpg"
           data-title="Introduction to Myofascial Release in Osteopathy"
@@ -231,7 +234,7 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 3. Zewail Nutrition -->
+        <!-- Clinical Nutrition -->
         <article class="cert-card" data-category="nutrition"
           data-img="assets/images/zewail-nutrition.jpg"
           data-title="Clinical Nutrition Training Program (45 Hours)"
@@ -250,7 +253,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 4. Nutrition Diploma -->
         <article class="cert-card" data-category="nutrition"
           data-img="assets/images/nutrition-diploma.jpg"
           data-title="Clinical Nutrition Diploma"
@@ -269,7 +271,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 5. UNICEF Anthropometric -->
         <article class="cert-card" data-category="nutrition"
           data-img="assets/images/unicef-anthropometric-measurements.jpg"
           data-title="Anthropometric Measurements for Children & Youth"
@@ -288,7 +289,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 6. UNICEF Breastfeeding -->
         <article class="cert-card" data-category="nutrition"
           data-img="assets/images/unicef-breastfeeding-fundamentals.jpg"
           data-title="Fundamentals of Breastfeeding (20 Hours)"
@@ -307,7 +307,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 7. Golden 1000 Days -->
         <article class="cert-card" data-category="nutrition"
           data-img="assets/images/family-counseling-golden-1000-days.jpg"
           data-title="Family Counseling Training — The Golden 1000 Days"
@@ -326,7 +325,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 8. Better Life Training -->
         <article class="cert-card" data-category="nutrition"
           data-img="assets/images/better-life-training.jpg"
           data-title="Virtual Practical Training in Clinical Nutrition"
@@ -345,7 +343,7 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 9. Infection Quality Control Diploma -->
+        <!-- Infection Control & Quality -->
         <article class="cert-card" data-category="infection"
           data-img="assets/images/infection-prevention-quality-control-diploma.jpg"
           data-title="Infection Prevention & Quality Control Diploma"
@@ -364,7 +362,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 10. Zewail Infection Control -->
         <article class="cert-card" data-category="infection"
           data-img="assets/images/zewail-infection-control.jpg"
           data-title="Infection Prevention & Control Blended Training"
@@ -383,7 +380,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 11. Medix Infection Control Statement -->
         <article class="cert-card" data-category="infection"
           data-img="assets/images/medix-infection-control-statement.jpg"
           data-title="Infection Control Practical Training Statement"
@@ -402,7 +398,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 12. Fatma Quality Control -->
         <article class="cert-card" data-category="infection"
           data-img="assets/images/fatma-quality-control.jpg"
           data-title="Quality Control Program (26 Hours)"
@@ -421,7 +416,7 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 13. Health Facilities Regulations -->
+        <!-- Hospital Management & Safety -->
         <article class="cert-card" data-category="management"
           data-img="assets/images/health-facilities-regulations.jpg"
           data-title="Regulations & Laws in Health Facilities"
@@ -440,7 +435,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 14. Hospital Directors Training -->
         <article class="cert-card" data-category="management"
           data-img="assets/images/hospital-directors-training.jpg"
           data-title="Hospital Directors & Deputies Leadership Program"
@@ -459,7 +453,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 15. Occupational Safety Basic -->
         <article class="cert-card" data-category="management"
           data-img="assets/images/occupational-safety-basic.jpg"
           data-title="Occupational Health & Safety (Basic Level)"
@@ -478,7 +471,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 16. Occupational Safety Advanced -->
         <article class="cert-card" data-category="management"
           data-img="assets/images/occupational-safety-advanced.jpg"
           data-title="Occupational Health & Safety (Advanced Level)"
@@ -497,7 +489,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 17. Occupational Safety Specialist -->
         <article class="cert-card" data-category="management"
           data-img="assets/images/occupational-safety-specialist.jpg"
           data-title="Occupational Safety & Health Specialist"
@@ -516,7 +507,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 18. Firefighting Training -->
         <article class="cert-card" data-category="management"
           data-img="assets/images/firefighting-training.jpg"
           data-title="Civil Protection & Firefighting Training"
@@ -535,7 +525,7 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 19. Strategic Studies & National Security -->
+        <!-- Leadership & Honors -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/strategic-studies-national-security.jpg"
           data-title="Strategic Studies & National Security Fellowship"
@@ -554,7 +544,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 20. Leaders Preparation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/leaders-preparation.jpg"
           data-title="Leaders Preparation & Executive Skills"
@@ -573,7 +562,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 21. Leaders Preparation Advanced -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/leaders-preparation-advanced.jpg"
           data-title="Advanced Leaders Preparation Program"
@@ -592,7 +580,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 22. Media Office Appreciation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/media-office-appreciation.jpg"
           data-title="Media & PR Office Recognition (1st Place Nationwide)"
@@ -611,7 +598,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 23. Hospital Management Team Appreciation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/hospital-management-team-appreciation.jpg"
           data-title="Hospital Management Team Appreciation Award"
@@ -630,7 +616,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 24. Hospital Management Appreciation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/hospital-management-appreciation.jpg"
           data-title="Hospital Executive Management Appreciation"
@@ -649,7 +634,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 25. Vision & Leadership Honoring -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/vision-and-leadership-honoring.jpg"
           data-title="Honorary Shield & Certificate of Excellence"
@@ -668,7 +652,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 26. 100 Million Seha Initiative -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/100-million-seha-initiative.jpg"
           data-title="Coordinator, 100 Million Healthy Lives Initiative"
@@ -687,7 +670,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 27. COVID Isolation Appreciation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/covid-isolation-appreciation.jpg"
           data-title="Frontline COVID-19 Isolation Ward Leadership"
@@ -706,7 +688,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 28. COVID Community Recognition -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/covid-community-recognition.jpg"
           data-title="Community Health & Pandemic Response Award"
@@ -725,7 +706,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 29. National Youth Initiative Appreciation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/national-youth-initiative-appreciation.jpg"
           data-title="National Youth & Healthcare Initiative Recognition"
@@ -744,7 +724,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 30. Nursing Syndicate Appreciation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/nursing-syndicate-appreciation.jpg"
           data-title="Syndicate Appreciation Award"
@@ -763,7 +742,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 31. Medix Midyear Training -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/medix-midyear-training.jpg"
           data-title="Mid-Year Continuing Education Certificate"
@@ -782,7 +760,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 32. FDTC Digital Transformation -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/fdtc-digital-transformation.jpg"
           data-title="Fundamentals of Digital Transformation (FDTC)"
@@ -801,7 +778,6 @@
           <button type="button" class="btn-view-certificate">View Certificate</button>
         </article>
 
-        <!-- 33. ICDL Arabia Certificate -->
         <article class="cert-card" data-category="honors"
           data-img="assets/images/icdl-arabia-certificate.jpg"
           data-title="International Computer Driving License (ICDL)"
@@ -823,113 +799,151 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal Viewer -->
+  <div id="mainCertModal">
+    <div class="modal-content-card">
+      <button type="button" class="modal-close-trigger" id="modalCloseBtn">&times;</button>
+      <img id="mImg" class="modal-display-img" src="" alt="Certificate View">
+      <span class="eyebrow" id="mCat" style="color: #0d7377; font-weight: 700; text-transform: uppercase;">Category</span>
+      <h3 id="mTitle" style="margin: 8px 0; font-size: 1.3rem; color: #0f172a;">Title</h3>
+      <div id="mIssuer" style="font-weight: 600; color: #0d7377; margin-bottom: 6px;">Issuer</div>
+      <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">
+        <span id="mDate">Date</span> &bull; <span id="mLevel">Level</span>
+      </div>
+      <p id="mDesc" style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin: 0;">Description</p>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>Ready to plan your recovery or your facility's next audit?</h2>
+          <p>Book a consultation directly, or reach the clinic team through our Facebook community.</p>
+        </div>
+        <div class="btn-row">
+          <a href="contact.html" class="btn btn-gold">Book a Consultation</a>
+          <a href="about.html" class="btn btn-outline">Read Full Biography</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<!-- Modal Box Window -->
-<div id="mainCertModal">
-  <div class="modal-content-card">
-    <button type="button" class="modal-close-trigger" id="modalCloseBtn">&times;</button>
-    <img id="mImg" class="modal-display-img" src="" alt="Certificate View">
-    <span class="eyebrow" id="mCat" style="color: #0d7377; font-weight: 700; text-transform: uppercase;">Category</span>
-    <h3 id="mTitle" style="margin: 8px 0; font-size: 1.3rem; color: #0f172a;">Title</h3>
-    <div id="mIssuer" style="font-weight: 600; color: #0d7377; margin-bottom: 6px;">Issuer</div>
-    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">
-      <span id="mDate">Date</span> &bull; <span id="mLevel">Level</span>
-    </div>
-    <p id="mDesc" style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin: 0;">Description</p>
-  </div>
-</div>
-
 <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/images/logo-seal.svg" alt="" width="48" height="48">
+      <div>
+        <h3>Dr. Rehab Mohamed Hassan</h3>
+        <p>Senior Physical Therapist &amp; Healthcare Management Consultant, Clinical Nutrition Specialist. License No. 2274, General Physical Therapy Syndicate of Egypt.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer">
+      <h4>Connect</h4>
+      <div class="social-row">
+        <a class="social-pill" href="https://www.facebook.com/share/14iZMghUTBf/" target="_blank" rel="noopener">Clinic Page</a>
+        <a class="social-pill" href="https://www.facebook.com/groups/1322577555018839/?ref=share&amp;mibextid=NSMWBT" target="_blank" rel="noopener">Clinic Group</a>
+        <a class="social-pill" href="https://www.facebook.com/share/1DDHBu3A2B/" target="_blank" rel="noopener">Personal Profile</a>
+      </div>
+    </div>
+  </div>
   <div class="container footer-bottom">
-    <span>© Al‑Zahraa Physical Therapy Center — Dr. Rehab Mohamed Hassan. All rights reserved.</span>
+    <span>© <span id="year"></span> Al‑Zahraa Physical Therapy Center — Dr. Rehab Mohamed Hassan. All rights reserved.</span>
+    <span>Al Sharqia Governorate, Egypt</span>
   </div>
 </footer>
 
 <script>
-  (function() {
-    function initGallery() {
-      var modal = document.getElementById('mainCertModal');
-      var mImg = document.getElementById('mImg');
-      var mTitle = document.getElementById('mTitle');
-      var mIssuer = document.getElementById('mIssuer');
-      var mCat = document.getElementById('mCat');
-      var mDate = document.getElementById('mDate');
-      var mLevel = document.getElementById('mLevel');
-      var mDesc = document.getElementById('mDesc');
-      var closeBtn = document.getElementById('modalCloseBtn');
+  window.addEventListener('load', function() {
+    var filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
+    var cards = document.querySelectorAll('.cert-grid .cert-card');
 
-      function openCardModal(card) {
-        if (!card) return;
-        mImg.src = card.getAttribute('data-img') || '';
-        mTitle.innerText = card.getAttribute('data-title') || '';
-        mIssuer.innerText = card.getAttribute('data-issuer') || '';
-        mCat.innerText = card.getAttribute('data-category-label') || '';
-        mDate.innerText = card.getAttribute('data-date') || '';
-        mLevel.innerText = card.getAttribute('data-level') || '';
-        mDesc.innerText = card.getAttribute('data-desc') || '';
-        modal.classList.add('is-open');
-      }
+    // 1. فلترة التبويبات بدون أي تضارب
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        
+        var targetCategory = this.getAttribute('data-filter');
 
-      function closeModal() {
-        modal.classList.remove('is-open');
-      }
-
-      // Event delegation for clicks on buttons or images
-      document.getElementById('mainCertGrid').addEventListener('click', function(e) {
-        var trigger = e.target.closest('.btn-view-certificate, .cert-img-thumb');
-        if (trigger) {
-          e.preventDefault();
-          e.stopPropagation();
-          var card = trigger.closest('.cert-card');
-          openCardModal(card);
-        }
+        cards.forEach(function(card) {
+          var cardCategory = card.getAttribute('data-category');
+          if (targetCategory === 'all' || cardCategory === targetCategory) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
       });
+    });
 
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          closeModal();
-        });
-      }
+    // 2. تفعيل نافذة العرض المنبثقة
+    var modal = document.getElementById('mainCertModal');
+    var mImg = document.getElementById('mImg');
+    var mTitle = document.getElementById('mTitle');
+    var mIssuer = document.getElementById('mIssuer');
+    var mCat = document.getElementById('mCat');
+    var mDate = document.getElementById('mDate');
+    var mLevel = document.getElementById('mLevel');
+    var mDesc = document.getElementById('mDesc');
+    var closeBtn = document.getElementById('modalCloseBtn');
 
-      if (modal) {
-        modal.addEventListener('click', function(e) {
-          if (e.target === modal) closeModal();
-        });
-      }
+    function openModal(card) {
+      if (!card) return;
+      mImg.src = card.getAttribute('data-img') || '';
+      mTitle.textContent = card.getAttribute('data-title') || '';
+      mIssuer.textContent = card.getAttribute('data-issuer') || '';
+      mCat.textContent = card.getAttribute('data-category-label') || '';
+      mDate.textContent = card.getAttribute('data-date') || '';
+      mLevel.textContent = card.getAttribute('data-level') || '';
+      mDesc.textContent = card.getAttribute('data-desc') || '';
+      modal.classList.add('is-open');
+    }
 
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
+    function closeModal() {
+      modal.classList.remove('is-open');
+    }
+
+    document.querySelectorAll('.btn-view-certificate, .cert-img-thumb').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var card = this.closest('.cert-card');
+        openModal(card);
       });
+    });
 
-      // Filter tabs handling
-      var filterBtns = document.querySelectorAll('.filter-btn');
-      var cards = document.querySelectorAll('.cert-card');
-
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          var target = btn.getAttribute('data-filter-target');
-
-          cards.forEach(function(c) {
-            if (target === 'all' || c.getAttribute('data-category') === target) {
-              c.style.display = 'flex';
-            } else {
-              c.style.display = 'none';
-            }
-          });
-        });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeModal();
       });
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initGallery);
-    } else {
-      initGallery();
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
     }
-  })();
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  });
 </script>
 </body>
 </html>
