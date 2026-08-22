@@ -4,47 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificates | Dr. Rehab Hassan — Diplomas, Trainings &amp; Honors</title>
-<meta name="description" content="Full archive of Dr. Rehab Mohamed Hassan's academic degrees, healthcare management, clinical nutrition and quality-control certifications.">
+<meta name="description" content="Official credentials, certificates, diplomas and honors of Dr. Rehab Mohamed Hassan.">
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-  .cert-img-thumb {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    background: #f1f5f9;
-    cursor: pointer;
+  .cert-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 1.5rem !important;
   }
-  
-  /* Modal Overlay - Force Display when active */
-  #certModal {
+  .cert-card {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 1.2rem !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .cert-img-thumb {
+    width: 100% !important;
+    height: 190px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-bottom: 12px !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  .btn-view-cert {
+    width: 100% !important;
+    margin-top: 12px !important;
+    cursor: pointer !important;
+    padding: 10px 14px !important;
+    font-weight: 600 !important;
+    background-color: #0d7377 !important;
+    color: #ffffff !important;
+    border: 1px solid #0d7377 !important;
+    border-radius: 6px !important;
+    text-align: center !important;
+    display: block !important;
+    transition: background-color 0.2s ease !important;
+  }
+  .btn-view-cert:hover {
+    background-color: #095255 !important;
+    color: #ffffff !important;
+  }
+
+  /* Global Popup Modal */
+  #modalViewer {
     display: none;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    background-color: rgba(15, 23, 42, 0.85) !important;
-    backdrop-filter: blur(4px);
-    z-index: 9999999 !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(4px) !important;
+    z-index: 999999999 !important;
     justify-content: center !important;
     align-items: center !important;
     padding: 20px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
+    box-sizing: border-box !important;
   }
-  
-  #certModal.show-modal {
-    display: flex !important;
-  }
-
-  .modal-box-custom {
+  .modal-inner {
     background: #ffffff !important;
     border-radius: 14px !important;
     max-width: 650px !important;
@@ -56,39 +82,33 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
     color: #1e293b !important;
   }
-
-  .modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #f1f5f9;
-    border: none;
-    font-size: 1.6rem;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #334155;
-    transition: 0.2s;
-    line-height: 1;
-    z-index: 10;
+  .modal-close-icon {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    background: #f1f5f9 !important;
+    border: none !important;
+    font-size: 1.6rem !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #334155 !important;
+    z-index: 10 !important;
   }
-
-  .modal-close-btn:hover {
-    background: #e2e8f0;
-    color: #000;
+  .modal-close-icon:hover {
+    background: #e2e8f0 !important;
+    color: #000 !important;
   }
-
-  .modal-img-preview {
+  .modal-full-img {
     width: 100% !important;
     max-height: 420px !important;
     object-fit: contain !important;
     border-radius: 8px !important;
-    margin-top: 10px !important;
-    margin-bottom: 16px !important;
+    margin: 12px 0 16px 0 !important;
     background: #f8fafc !important;
     border: 1px solid #e2e8f0 !important;
     display: block !important;
@@ -101,7 +121,7 @@
 <header class="site-header">
   <div class="container nav-bar">
     <a href="index.html" class="brand">
-      <img src="assets/images/logo-seal.svg" alt="Dr. Rehab Hassan credential seal logo" width="42" height="42">
+      <img src="assets/images/logo-seal.svg" alt="Dr. Rehab Hassan logo" width="42" height="42">
       <span class="brand-text"><strong>Dr. Rehab Hassan</strong><span>Physio · Nutrition · Hospital Mgmt</span></span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -128,626 +148,410 @@
   <section class="section">
     <div class="container">
       <div class="filter-bar" role="tablist" aria-label="Filter certificates by category">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="physio">Physical Therapy</button>
-        <button class="filter-btn" data-filter="nutrition">Clinical Nutrition</button>
-        <button class="filter-btn" data-filter="infection">Infection Control &amp; Quality</button>
-        <button class="filter-btn" data-filter="management">Hospital Mgmt &amp; Safety</button>
-        <button class="filter-btn" data-filter="honors">Leadership &amp; Honors</button>
+        <button class="filter-btn active" onclick="filterCerts('all', this)">All</button>
+        <button class="filter-btn" onclick="filterCerts('physio', this)">Physical Therapy</button>
+        <button class="filter-btn" onclick="filterCerts('nutrition', this)">Clinical Nutrition</button>
+        <button class="filter-btn" onclick="filterCerts('infection', this)">Infection Control &amp; Quality</button>
+        <button class="filter-btn" onclick="filterCerts('management', this)">Hospital Mgmt &amp; Safety</button>
+        <button class="filter-btn" onclick="filterCerts('honors', this)">Leadership &amp; Honors</button>
       </div>
 
       <div class="cert-grid">
 
-        <!-- 1. Physical Therapy Syndicate Card -->
-        <article class="cert-card" data-category="physio"
-          data-category-label="Physical Therapy" data-img="assets/images/physical-therapy-syndicate-card.jpg"
-          data-title="Syndicate Membership & Practice Card" data-issuer="General Physical Therapy Syndicate of Egypt"
-          data-date="Valid to 2026" data-level="Registration No. 2274"
-          data-desc="Official registration card and practicing license from the General Physical Therapy Syndicate of Egypt.">
+        <!-- 1. PT Syndicate Card -->
+        <article class="cert-card" data-category="physio">
           <img src="assets/images/physical-therapy-syndicate-card.jpg" alt="Syndicate Card" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Reg. No. 2274</span>
-              <h3>Syndicate Membership Card</h3>
-              <div class="cert-issuer">GPTN — Egypt</div>
-            </div>
+            <span class="cert-level">Reg. No. 2274</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Syndicate Membership Card</h3>
+            <div class="cert-issuer">GPTN — Egypt</div>
           </div>
-          <div class="cert-date">2003</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2003</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/physical-therapy-syndicate-card.jpg', 'Syndicate Membership Card', 'General Physical Therapy Syndicate of Egypt', 'Physical Therapy', 'Valid to 2026', 'Registration No. 2274', 'Official registration card and practicing license from the General Physical Therapy Syndicate of Egypt.')">View Certificate</button>
         </article>
 
         <!-- 2. Myofascial Release -->
-        <article class="cert-card" data-category="physio"
-          data-category-label="Physical Therapy" data-img="assets/images/myofascial-release.jpg"
-          data-title="Introduction to Myofascial Release in Osteopathy" data-issuer="Osteopathic College of Ontario"
-          data-date="2018" data-level="Specialized Training"
-          data-desc="Clinical workshop covering myofascial release protocols and manual therapeutic techniques.">
+        <article class="cert-card" data-category="physio">
           <img src="assets/images/myofascial-release.jpg" alt="Myofascial Release" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Specialized Training</span>
-              <h3>Myofascial Release in Osteopathy</h3>
-              <div class="cert-issuer">Osteopathic College of Ontario</div>
-            </div>
+            <span class="cert-level">Specialized Training</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Myofascial Release in Osteopathy</h3>
+            <div class="cert-issuer">Osteopathic College of Ontario</div>
           </div>
-          <div class="cert-date">2018</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2018</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/myofascial-release.jpg', 'Introduction to Myofascial Release in Osteopathy', 'Osteopathic College of Ontario', 'Physical Therapy', '2018', 'Specialized Training', 'Clinical workshop covering myofascial release protocols and manual therapeutic techniques.')">View Certificate</button>
         </article>
 
         <!-- 3. Zewail Nutrition -->
-        <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-img="assets/images/zewail-nutrition.jpg"
-          data-title="Clinical Nutrition Training Program (45 Hours)" data-issuer="Zewail City of Science and Technology &amp; Medix"
-          data-date="45 Hours" data-level="Specialized Course"
-          data-desc="Intensive training program in clinical and therapeutic nutrition at Zewail City of Science and Technology.">
+        <article class="cert-card" data-category="nutrition">
           <img src="assets/images/zewail-nutrition.jpg" alt="Zewail Nutrition" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">45 Hours</span>
-              <h3>Clinical Nutrition Program</h3>
-              <div class="cert-issuer">Zewail City &amp; Medix</div>
-            </div>
+            <span class="cert-level">45 Hours</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Clinical Nutrition Program</h3>
+            <div class="cert-issuer">Zewail City &amp; Medix</div>
           </div>
-          <div class="cert-date">Accredited</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Accredited</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/zewail-nutrition.jpg', 'Clinical Nutrition Training Program (45 Hours)', 'Zewail City of Science and Technology & Medix', 'Clinical Nutrition', '45 Hours', 'Specialized Course', 'Intensive training program in clinical and therapeutic nutrition at Zewail City of Science and Technology.')">View Certificate</button>
         </article>
 
         <!-- 4. Nutrition Diploma -->
-        <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-img="assets/images/nutrition-diploma.jpg"
-          data-title="Clinical Nutrition Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
-          data-date="2023" data-level="Professional Diploma"
-          data-desc="Postgraduate diploma covering clinical nutrition assessment and therapeutic dietary interventions.">
+        <article class="cert-card" data-category="nutrition">
           <img src="assets/images/nutrition-diploma.jpg" alt="Nutrition Diploma" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Diploma</span>
-              <h3>Clinical Nutrition Diploma</h3>
-              <div class="cert-issuer">AACME</div>
-            </div>
+            <span class="cert-level">Diploma</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Clinical Nutrition Diploma</h3>
+            <div class="cert-issuer">AACME</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/nutrition-diploma.jpg', 'Clinical Nutrition Diploma', 'American Association of Continuing Medical Education (AACME)', 'Clinical Nutrition', '2023', 'Professional Diploma', 'Postgraduate diploma covering clinical nutrition assessment and therapeutic dietary interventions.')">View Certificate</button>
         </article>
 
         <!-- 5. UNICEF Anthropometric -->
-        <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-img="assets/images/unicef-anthropometric-measurements.jpg"
-          data-title="Anthropometric Measurements for Children &amp; Youth" data-issuer="UNICEF &amp; National Nutrition Institute"
-          data-date="August 12, 2025" data-level="Accredited Certificate"
-          data-desc="Theoretical and practical training for measuring growth standards in children by UNICEF and Egypt MOH.">
+        <article class="cert-card" data-category="nutrition">
           <img src="assets/images/unicef-anthropometric-measurements.jpg" alt="UNICEF Anthropometric" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">UNICEF Certified</span>
-              <h3>Anthropometric Measurements Training</h3>
-              <div class="cert-issuer">UNICEF &amp; NNI</div>
-            </div>
+            <span class="cert-level">UNICEF Certified</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Anthropometric Measurements Training</h3>
+            <div class="cert-issuer">UNICEF &amp; NNI</div>
           </div>
-          <div class="cert-date">August 2025</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">August 2025</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/unicef-anthropometric-measurements.jpg', 'Anthropometric Measurements for Children & Youth', 'UNICEF & National Nutrition Institute', 'Clinical Nutrition', 'August 12, 2025', 'Accredited Certificate', 'Theoretical and practical training for measuring growth standards in children by UNICEF and Egypt MOH.')">View Certificate</button>
         </article>
 
         <!-- 6. UNICEF Breastfeeding -->
-        <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-img="assets/images/unicef-breastfeeding-fundamentals.jpg"
-          data-title="Fundamentals of Breastfeeding (20 Hours)" data-issuer="UNICEF, WFP &amp; National Nutrition Institute"
-          data-date="September 08, 2025" data-level="20 Hours Course"
-          data-desc="Specialized maternal and newborn feeding program jointly conducted by UNICEF and WFP.">
+        <article class="cert-card" data-category="nutrition">
           <img src="assets/images/unicef-breastfeeding-fundamentals.jpg" alt="UNICEF Breastfeeding" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">20 Hours</span>
-              <h3>Fundamentals of Breastfeeding</h3>
-              <div class="cert-issuer">UNICEF, WFP &amp; NNI</div>
-            </div>
+            <span class="cert-level">20 Hours</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Fundamentals of Breastfeeding</h3>
+            <div class="cert-issuer">UNICEF, WFP &amp; NNI</div>
           </div>
-          <div class="cert-date">September 2025</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">September 2025</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/unicef-breastfeeding-fundamentals.jpg', 'Fundamentals of Breastfeeding (20 Hours)', 'UNICEF, WFP & National Nutrition Institute', 'Clinical Nutrition', 'September 08, 2025', '20 Hours Course', 'Specialized maternal and newborn feeding program jointly conducted by UNICEF and WFP.')">View Certificate</button>
         </article>
 
         <!-- 7. Golden 1000 Days -->
-        <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-img="assets/images/family-counseling-golden-1000-days.jpg"
-          data-title="Family Counseling Training — The Golden 1000 Days" data-issuer="Presidential Initiative — Ministry of Health"
-          data-date="2025" data-level="National Initiative"
-          data-desc="Accredited trainer in family and maternal nutritional guidance under the presidential initiative.">
+        <article class="cert-card" data-category="nutrition">
           <img src="assets/images/family-counseling-golden-1000-days.jpg" alt="Golden 1000 Days" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Presidential Initiative</span>
-              <h3>Family Counseling (Golden 1000 Days)</h3>
-              <div class="cert-issuer">Ministry of Health</div>
-            </div>
+            <span class="cert-level">Presidential Initiative</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Family Counseling (Golden 1000 Days)</h3>
+            <div class="cert-issuer">Ministry of Health</div>
           </div>
-          <div class="cert-date">2025</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2025</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/family-counseling-golden-1000-days.jpg', 'Family Counseling Training — The Golden 1000 Days', 'Presidential Initiative — Ministry of Health', 'Clinical Nutrition', '2025', 'National Initiative', 'Accredited trainer in family and maternal nutritional guidance under the presidential initiative.')">View Certificate</button>
         </article>
 
         <!-- 8. Better Life Training -->
-        <article class="cert-card" data-category="nutrition"
-          data-category-label="Clinical Nutrition" data-img="assets/images/better-life-training.jpg"
-          data-title="Virtual Practical Training in Clinical Nutrition" data-issuer="Better Life Clinics"
-          data-date="2023" data-level="Practical Case Training"
-          data-desc="Virtual case-based practical training in applied clinical nutrition and patient dietary planning.">
+        <article class="cert-card" data-category="nutrition">
           <img src="assets/images/better-life-training.jpg" alt="Better Life Training" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Practical Training</span>
-              <h3>Clinical Nutrition Case Training</h3>
-              <div class="cert-issuer">Better Life Clinics</div>
-            </div>
+            <span class="cert-level">Practical Training</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Clinical Nutrition Case Training</h3>
+            <div class="cert-issuer">Better Life Clinics</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/better-life-training.jpg', 'Virtual Practical Training in Clinical Nutrition', 'Better Life Clinics', 'Clinical Nutrition', '2023', 'Practical Case Training', 'Virtual case-based practical training in applied clinical nutrition and patient dietary planning.')">View Certificate</button>
         </article>
 
         <!-- 9. Infection Quality Control Diploma -->
-        <article class="cert-card" data-category="infection"
-          data-category-label="Infection Control &amp; Quality" data-img="assets/images/infection-prevention-quality-control-diploma.jpg"
-          data-title="Infection Prevention &amp; Quality Control Diploma" data-issuer="American Association of Continuing Medical Education (AACME)"
-          data-date="2023" data-level="Postgraduate Diploma"
-          data-desc="Comprehensive diploma in infection prevention protocols and healthcare quality management systems.">
+        <article class="cert-card" data-category="infection">
           <img src="assets/images/infection-prevention-quality-control-diploma.jpg" alt="Infection Diploma" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Diploma</span>
-              <h3>Infection Prevention &amp; Quality Control</h3>
-              <div class="cert-issuer">AACME</div>
-            </div>
+            <span class="cert-level">Diploma</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Infection Prevention &amp; Quality Control</h3>
+            <div class="cert-issuer">AACME</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/infection-prevention-quality-control-diploma.jpg', 'Infection Prevention & Quality Control Diploma', 'American Association of Continuing Medical Education (AACME)', 'Infection Control & Quality', '2023', 'Postgraduate Diploma', 'Comprehensive diploma in infection prevention protocols and healthcare quality management systems.')">View Certificate</button>
         </article>
 
         <!-- 10. Zewail Infection Control -->
-        <article class="cert-card" data-category="infection"
-          data-category-label="Infection Control &amp; Quality" data-img="assets/images/zewail-infection-control.jpg"
-          data-title="Infection Prevention &amp; Control Blended Training" data-issuer="Center for Microbiology &amp; Phage Therapy, Zewail City"
-          data-date="2023" data-level="Blended Training"
-          data-desc="Advanced practical and theoretical training in hospital epidemiology and infection control standards.">
+        <article class="cert-card" data-category="infection">
           <img src="assets/images/zewail-infection-control.jpg" alt="Zewail Infection" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Blended Training</span>
-              <h3>Infection Prevention &amp; Control</h3>
-              <div class="cert-issuer">Zewail City</div>
-            </div>
+            <span class="cert-level">Blended Training</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Infection Prevention &amp; Control</h3>
+            <div class="cert-issuer">Zewail City</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/zewail-infection-control.jpg', 'Infection Prevention & Control Blended Training', 'Center for Microbiology & Phage Therapy, Zewail City', 'Infection Control & Quality', '2023', 'Blended Training', 'Advanced practical and theoretical training in hospital epidemiology and infection control standards.')">View Certificate</button>
         </article>
 
         <!-- 11. Medix Infection Control Statement -->
-        <article class="cert-card" data-category="infection"
-          data-category-label="Infection Control &amp; Quality" data-img="assets/images/medix-infection-control-statement.jpg"
-          data-title="Infection Control Practical Training Statement" data-issuer="Medix Educational Institution"
-          data-date="2023" data-level="Attestation Record"
-          data-desc="Official training statement confirming completion of clinical and hands-on infection control workshops.">
+        <article class="cert-card" data-category="infection">
           <img src="assets/images/medix-infection-control-statement.jpg" alt="Medix Statement" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Training Statement</span>
-              <h3>Infection Control Completion</h3>
-              <div class="cert-issuer">Medix Training</div>
-            </div>
+            <span class="cert-level">Training Statement</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Infection Control Completion</h3>
+            <div class="cert-issuer">Medix Training</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/medix-infection-control-statement.jpg', 'Infection Control Practical Training Statement', 'Medix Educational Institution', 'Infection Control & Quality', '2023', 'Attestation Record', 'Official training statement confirming completion of clinical and hands-on infection control workshops.')">View Certificate</button>
         </article>
 
         <!-- 12. Fatma Quality Control -->
-        <article class="cert-card" data-category="infection"
-          data-category-label="Infection Control &amp; Quality" data-img="assets/images/fatma-quality-control.jpg"
-          data-title="Quality Control Program (26 Hours)" data-issuer="Princess Fatma Academy for Professional Medical Education"
-          data-date="2022" data-level="Grade: Excellent · 88%"
-          data-desc="26-hour Quality Control Program completed with a Grade of Excellent (88%) at Princess Fatma Academy.">
+        <article class="cert-card" data-category="infection">
           <img src="assets/images/fatma-quality-control.jpg" alt="Fatma Quality Control" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Excellent · 88%</span>
-              <h3>Healthcare Quality Control (26 Hours)</h3>
-              <div class="cert-issuer">Princess Fatma Academy</div>
-            </div>
+            <span class="cert-level">Excellent · 88%</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Healthcare Quality Control</h3>
+            <div class="cert-issuer">Princess Fatma Academy</div>
           </div>
-          <div class="cert-date">2022</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2022</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/fatma-quality-control.jpg', 'Quality Control Program (26 Hours)', 'Princess Fatma Academy for Professional Medical Education', 'Infection Control & Quality', '2022', 'Grade: Excellent · 88%', '26-hour Quality Control Program completed with a Grade of Excellent (88%) at Princess Fatma Academy.')">View Certificate</button>
         </article>
 
         <!-- 13. Health Facilities Regulations -->
-        <article class="cert-card" data-category="management"
-          data-category-label="Hospital Management" data-img="assets/images/health-facilities-regulations.jpg"
-          data-title="Regulations &amp; Laws in Health Facilities" data-issuer="General Directorate of Technical Inspection — MOH"
-          data-date="2023" data-level="Regulatory Inspection"
-          data-desc="Training on healthcare legal compliance, audit standards, and facility inspection procedures.">
+        <article class="cert-card" data-category="management">
           <img src="assets/images/health-facilities-regulations.jpg" alt="Regulations" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Inspection &amp; Laws</span>
-              <h3>Health Facilities Regulations</h3>
-              <div class="cert-issuer">Technical Inspection — MOH</div>
-            </div>
+            <span class="cert-level">Inspection &amp; Laws</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Health Facilities Regulations</h3>
+            <div class="cert-issuer">Technical Inspection — MOH</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/health-facilities-regulations.jpg', 'Regulations & Laws in Health Facilities', 'General Directorate of Technical Inspection — MOH', 'Hospital Management', '2023', 'Regulatory Inspection', 'Training on healthcare legal compliance, audit standards, and facility inspection procedures.')">View Certificate</button>
         </article>
 
         <!-- 14. Hospital Directors Training -->
-        <article class="cert-card" data-category="management"
-          data-category-label="Hospital Management" data-img="assets/images/hospital-directors-training.jpg"
-          data-title="Hospital Directors &amp; Deputies Leadership Program" data-issuer="Directorate of Health Affairs — Al Sharqia"
-          data-date="2023" data-level="Executive Leadership"
-          data-desc="Executive program for hospital leadership on crisis management and clinical governance.">
+        <article class="cert-card" data-category="management">
           <img src="assets/images/hospital-directors-training.jpg" alt="Hospital Directors" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Executive Program</span>
-              <h3>Hospital Directors Leadership</h3>
-              <div class="cert-issuer">Health Affairs Directorate</div>
-            </div>
+            <span class="cert-level">Executive Program</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Hospital Directors Leadership</h3>
+            <div class="cert-issuer">Health Affairs Directorate</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/hospital-directors-training.jpg', 'Hospital Directors & Deputies Leadership Program', 'Directorate of Health Affairs — Al Sharqia', 'Hospital Management', '2023', 'Executive Leadership', 'Executive program for hospital leadership on crisis management and clinical governance.')">View Certificate</button>
         </article>
 
         <!-- 15. Occupational Safety Basic -->
-        <article class="cert-card" data-category="management"
-          data-category-label="Hospital Management" data-img="assets/images/occupational-safety-basic.jpg"
-          data-title="Occupational Health &amp; Safety (Basic Level)" data-issuer="OHS National Institute"
-          data-date="Certified" data-level="Foundational Level"
-          data-desc="Basic standards of workplace hazard mitigation and healthcare facility safety rules.">
+        <article class="cert-card" data-category="management">
           <img src="assets/images/occupational-safety-basic.jpg" alt="Safety Basic" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Basic Level</span>
-              <h3>Occupational Health &amp; Safety</h3>
-              <div class="cert-issuer">OHS Institute</div>
-            </div>
+            <span class="cert-level">Basic Level</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Occupational Health &amp; Safety</h3>
+            <div class="cert-issuer">OHS Institute</div>
           </div>
-          <div class="cert-date">Certified</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Certified</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/occupational-safety-basic.jpg', 'Occupational Health & Safety (Basic Level)', 'OHS National Institute', 'Hospital Management', 'Certified', 'Foundational Level', 'Basic standards of workplace hazard mitigation and healthcare facility safety rules.')">View Certificate</button>
         </article>
 
         <!-- 16. Occupational Safety Advanced -->
-        <article class="cert-card" data-category="management"
-          data-category-label="Hospital Management" data-img="assets/images/occupational-safety-advanced.jpg"
-          data-title="Occupational Health &amp; Safety (Advanced Level)" data-issuer="OHS National Institute"
-          data-date="Advanced" data-level="Advanced Level"
-          data-desc="Advanced risk assessment, environment safety audit, and emergency response planning.">
+        <article class="cert-card" data-category="management">
           <img src="assets/images/occupational-safety-advanced.jpg" alt="Safety Advanced" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Advanced Level</span>
-              <h3>Advanced Workplace Safety</h3>
-              <div class="cert-issuer">OHS Institute</div>
-            </div>
+            <span class="cert-level">Advanced Level</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Advanced Workplace Safety</h3>
+            <div class="cert-issuer">OHS Institute</div>
           </div>
-          <div class="cert-date">Advanced</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Advanced</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/occupational-safety-advanced.jpg', 'Occupational Health & Safety (Advanced Level)', 'OHS National Institute', 'Hospital Management', 'Advanced', 'Advanced Level', 'Advanced risk assessment, environment safety audit, and emergency response planning.')">View Certificate</button>
         </article>
 
         <!-- 17. Occupational Safety Specialist -->
-        <article class="cert-card" data-category="management"
-          data-category-label="Hospital Management" data-img="assets/images/occupational-safety-specialist.jpg"
-          data-title="Occupational Safety &amp; Health Specialist" data-issuer="OHS National Institute"
-          data-date="Specialist" data-level="Specialist Certification"
-          data-desc="Certified specialist in hospital safety compliance and health environment administration.">
+        <article class="cert-card" data-category="management">
           <img src="assets/images/occupational-safety-specialist.jpg" alt="Safety Specialist" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Specialist Level</span>
-              <h3>OHS Specialist Certification</h3>
-              <div class="cert-issuer">OHS Institute</div>
-            </div>
+            <span class="cert-level">Specialist Level</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">OHS Specialist Certification</h3>
+            <div class="cert-issuer">OHS Institute</div>
           </div>
-          <div class="cert-date">Specialist</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Specialist</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/occupational-safety-specialist.jpg', 'Occupational Safety & Health Specialist', 'OHS National Institute', 'Hospital Management', 'Specialist', 'Specialist Certification', 'Certified specialist in hospital safety compliance and health environment administration.')">View Certificate</button>
         </article>
 
         <!-- 18. Firefighting Training -->
-        <article class="cert-card" data-category="management"
-          data-category-label="Hospital Management" data-img="assets/images/firefighting-training.jpg"
-          data-title="Civil Protection &amp; Firefighting Training" data-issuer="Civil Protection Authority"
-          data-date="Certified" data-level="Safety &amp; Evacuation"
-          data-desc="Certified training on emergency evacuation and hospital firefighting safety systems.">
+        <article class="cert-card" data-category="management">
           <img src="assets/images/firefighting-training.jpg" alt="Firefighting Training" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Civil Protection</span>
-              <h3>Firefighting &amp; Safety Training</h3>
-              <div class="cert-issuer">Civil Protection Authority</div>
-            </div>
+            <span class="cert-level">Civil Protection</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Firefighting &amp; Safety Training</h3>
+            <div class="cert-issuer">Civil Protection Authority</div>
           </div>
-          <div class="cert-date">Certified</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Certified</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/firefighting-training.jpg', 'Civil Protection & Firefighting Training', 'Civil Protection Authority', 'Hospital Management', 'Certified', 'Safety & Evacuation', 'Certified training on emergency evacuation and hospital firefighting safety systems.')">View Certificate</button>
         </article>
 
         <!-- 19. Strategic Studies & National Security -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/strategic-studies-national-security.jpg"
-          data-title="Strategic Studies &amp; National Security Fellowship" data-issuer="National Defense College — Military Academy for Postgraduate Studies"
-          data-date="December 06, 2025" data-level="National Defense College"
-          data-desc="Strategic studies, crisis preparedness, and national healthcare governance.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/strategic-studies-national-security.jpg" alt="Strategic Studies" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Defense College</span>
-              <h3>Strategic Studies &amp; National Security</h3>
-              <div class="cert-issuer">Military Academy</div>
-            </div>
+            <span class="cert-level">Defense College</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Strategic Studies &amp; National Security</h3>
+            <div class="cert-issuer">Military Academy</div>
           </div>
-          <div class="cert-date">Dec 2025</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Dec 2025</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/strategic-studies-national-security.jpg', 'Strategic Studies & National Security Fellowship', 'National Defense College — Military Academy for Postgraduate Studies', 'Leadership & Honors', 'December 06, 2025', 'National Defense College', 'Strategic studies, crisis preparedness, and national healthcare governance.')">View Certificate</button>
         </article>
 
         <!-- 20. Leaders Preparation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/leaders-preparation.jpg"
-          data-title="Leaders Preparation &amp; Executive Skills" data-issuer="Ministry Training Administration"
-          data-date="2024" data-level="Leadership Track"
-          data-desc="Executive administrative skills, workflow optimization, and institutional leadership.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/leaders-preparation.jpg" alt="Leaders Preparation" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Leadership Track</span>
-              <h3>Leaders Preparation Program</h3>
-              <div class="cert-issuer">Training Administration</div>
-            </div>
+            <span class="cert-level">Leadership Track</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Leaders Preparation Program</h3>
+            <div class="cert-issuer">Training Administration</div>
           </div>
-          <div class="cert-date">2024</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2024</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/leaders-preparation.jpg', 'Leaders Preparation & Executive Skills', 'Ministry Training Administration', 'Leadership & Honors', '2024', 'Leadership Track', 'Executive administrative skills, workflow optimization, and institutional leadership.')">View Certificate</button>
         </article>
 
         <!-- 21. Leaders Preparation Advanced -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/leaders-preparation-advanced.jpg"
-          data-title="Advanced Leaders Preparation Program" data-issuer="Leadership Development Center"
-          data-date="Advanced" data-level="Advanced Leadership"
-          data-desc="High-level leadership and decision-making for executive healthcare supervisors.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/leaders-preparation-advanced.jpg" alt="Advanced Leaders" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Advanced Track</span>
-              <h3>Advanced Leaders Preparation</h3>
-              <div class="cert-issuer">Leadership Center</div>
-            </div>
+            <span class="cert-level">Advanced Track</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Advanced Leaders Preparation</h3>
+            <div class="cert-issuer">Leadership Center</div>
           </div>
-          <div class="cert-date">Advanced</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Advanced</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/leaders-preparation-advanced.jpg', 'Advanced Leaders Preparation Program', 'Leadership Development Center', 'Leadership & Honors', 'Advanced', 'Advanced Leadership', 'High-level leadership and decision-making for executive healthcare supervisors.')">View Certificate</button>
         </article>
 
         <!-- 22. Media Office Appreciation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/media-office-appreciation.jpg"
-          data-title="Media &amp; PR Office Recognition (1st Place Nationwide)" data-issuer="Directorate of Health Affairs"
-          data-date="Honor" data-level="Ranked 1st Nationwide"
-          data-desc="Recognized as Head of the Media and PR Office ranking first nationwide across Egyptian hospitals.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/media-office-appreciation.jpg" alt="Media Office Appreciation" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Ranked 1st Nationwide</span>
-              <h3>Media Office Recognition</h3>
-              <div class="cert-issuer">Directorate of Health Affairs</div>
-            </div>
+            <span class="cert-level">Ranked 1st Nationwide</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Media Office Recognition</h3>
+            <div class="cert-issuer">Directorate of Health Affairs</div>
           </div>
-          <div class="cert-date">Award</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Award</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/media-office-appreciation.jpg', 'Media & PR Office Recognition (1st Place Nationwide)', 'Directorate of Health Affairs', 'Leadership & Honors', 'Honor', 'Ranked 1st Nationwide', 'Recognized as Head of the Media and PR Office ranking first nationwide across Egyptian hospitals.')">View Certificate</button>
         </article>
 
         <!-- 23. Hospital Management Team Appreciation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/hospital-management-team-appreciation.jpg"
-          data-title="Hospital Management Team Appreciation Award" data-issuer="Hospital Administration — Directorate of Health Affairs"
-          data-date="Honor" data-level="Merit Award"
-          data-desc="Ministerial appreciation certificate honoring exceptional leadership in hospital performance.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/hospital-management-team-appreciation.jpg" alt="Hospital Team Appreciation" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Merit Award</span>
-              <h3>Hospital Management Team Honor</h3>
-              <div class="cert-issuer">Health Affairs Directorate</div>
-            </div>
+            <span class="cert-level">Merit Award</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Hospital Management Team Honor</h3>
+            <div class="cert-issuer">Health Affairs Directorate</div>
           </div>
-          <div class="cert-date">Honored</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Honored</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/hospital-management-team-appreciation.jpg', 'Hospital Management Team Appreciation Award', 'Hospital Administration — Directorate of Health Affairs', 'Leadership & Honors', 'Honor', 'Merit Award', 'Ministerial appreciation certificate honoring exceptional leadership in hospital performance.')">View Certificate</button>
         </article>
 
         <!-- 24. Hospital Management Appreciation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/hospital-management-appreciation.jpg"
-          data-title="Hospital Executive Management Appreciation" data-issuer="Al-Ibrahimiya Central Hospital"
-          data-date="Merit" data-level="Executive Recognition"
-          data-desc="Certificate of gratitude for outstanding leadership as Vice Director of Al-Ibrahimiya Hospital.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/hospital-management-appreciation.jpg" alt="Management Appreciation" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Executive Recognition</span>
-              <h3>Hospital Management Appreciation</h3>
-              <div class="cert-issuer">Al-Ibrahimiya Hospital</div>
-            </div>
+            <span class="cert-level">Executive Recognition</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Hospital Management Appreciation</h3>
+            <div class="cert-issuer">Al-Ibrahimiya Hospital</div>
           </div>
-          <div class="cert-date">Merit</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Merit</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/hospital-management-appreciation.jpg', 'Hospital Executive Management Appreciation', 'Al-Ibrahimiya Central Hospital', 'Leadership & Honors', 'Merit', 'Executive Recognition', 'Certificate of gratitude for outstanding leadership as Vice Director of Al-Ibrahimiya Hospital.')">View Certificate</button>
         </article>
 
         <!-- 25. Vision & Leadership Honoring -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/vision-and-leadership-honoring.jpg"
-          data-title="Honorary Shield &amp; Certificate of Excellence" data-issuer="Vision &amp; Leadership International Foundation"
-          data-date="Distinguished Honor" data-level="Ambassador of Peace"
-          data-desc="Shield and certificate of recognition for distinguished public service and healthcare leadership.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/vision-and-leadership-honoring.jpg" alt="Vision Honoring" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">International Honor</span>
-              <h3>Vision &amp; Leadership Shield</h3>
-              <div class="cert-issuer">Vision &amp; Leadership Foundation</div>
-            </div>
+            <span class="cert-level">International Honor</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Vision &amp; Leadership Shield</h3>
+            <div class="cert-issuer">Vision &amp; Leadership Foundation</div>
           </div>
-          <div class="cert-date">Honored</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Honored</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/vision-and-leadership-honoring.jpg', 'Honorary Shield & Certificate of Excellence', 'Vision & Leadership International Foundation', 'Leadership & Honors', 'Distinguished Honor', 'Ambassador of Peace', 'Shield and certificate of recognition for distinguished public service and healthcare leadership.')">View Certificate</button>
         </article>
 
         <!-- 26. 100 Million Seha Initiative -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/100-million-seha-initiative.jpg"
-          data-title="Coordinator, '100 Million Healthy Lives' Initiative" data-issuer="Presidential Initiative — Ministry of Health"
-          data-date="2019" data-level="National Presidential Campaign"
-          data-desc="Official recognition for leading and coordinating the national public health screening campaign.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/100-million-seha-initiative.jpg" alt="100 Million Seha" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Presidential Campaign</span>
-              <h3>100 Million Healthy Lives</h3>
-              <div class="cert-issuer">Ministry of Health</div>
-            </div>
+            <span class="cert-level">Presidential Campaign</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">100 Million Healthy Lives</h3>
+            <div class="cert-issuer">Ministry of Health</div>
           </div>
-          <div class="cert-date">2019</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2019</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/100-million-seha-initiative.jpg', 'Coordinator, 100 Million Healthy Lives Initiative', 'Presidential Initiative — Ministry of Health', 'Leadership & Honors', '2019', 'National Presidential Campaign', 'Official recognition for leading and coordinating the national public health screening campaign.')">View Certificate</button>
         </article>
 
         <!-- 27. COVID Isolation Appreciation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/covid-isolation-appreciation.jpg"
-          data-title="Frontline COVID-19 Isolation Ward Leadership" data-issuer="Al-Ibrahimiya Central Hospital"
-          data-date="2020 (2nd Wave)" data-level="Frontline Recognition"
-          data-desc="Honoring bravery and medical leadership during the peak of the COVID-19 pandemic isolation unit.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/covid-isolation-appreciation.jpg" alt="COVID Isolation" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Frontline Hero</span>
-              <h3>COVID-19 Isolation Leadership</h3>
-              <div class="cert-issuer">Central Hospital</div>
-            </div>
+            <span class="cert-level">Frontline Hero</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">COVID-19 Isolation Leadership</h3>
+            <div class="cert-issuer">Central Hospital</div>
           </div>
-          <div class="cert-date">2020</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2020</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/covid-isolation-appreciation.jpg', 'Frontline COVID-19 Isolation Ward Leadership', 'Al-Ibrahimiya Central Hospital', 'Leadership & Honors', '2020 (2nd Wave)', 'Frontline Recognition', 'Honoring bravery and medical leadership during the peak of the COVID-19 pandemic isolation unit.')">View Certificate</button>
         </article>
 
         <!-- 28. COVID Community Recognition -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/covid-community-recognition.jpg"
-          data-title="Community Health &amp; Pandemic Response Award" data-issuer="Community Healthcare Committee"
-          data-date="2021" data-level="Community Award"
-          data-desc="Community appreciation for exceptional medical guidance and patient support during the pandemic.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/covid-community-recognition.jpg" alt="COVID Community" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Community Award</span>
-              <h3>Pandemic Response Recognition</h3>
-              <div class="cert-issuer">Community Healthcare Committee</div>
-            </div>
+            <span class="cert-level">Community Award</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Pandemic Response Recognition</h3>
+            <div class="cert-issuer">Community Healthcare Committee</div>
           </div>
-          <div class="cert-date">2021</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2021</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/covid-community-recognition.jpg', 'Community Health & Pandemic Response Award', 'Community Healthcare Committee', 'Leadership & Honors', '2021', 'Community Award', 'Community appreciation for exceptional medical guidance and patient support during the pandemic.')">View Certificate</button>
         </article>
 
         <!-- 29. National Youth Initiative Appreciation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/national-youth-initiative-appreciation.jpg"
-          data-title="National Youth &amp; Healthcare Initiative Recognition" data-issuer="Ministry of Youth &amp; Sports"
-          data-date="Honor" data-level="National Initiative"
-          data-desc="Honoring public service, health awareness lectures, and sports medicine youth initiatives.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/national-youth-initiative-appreciation.jpg" alt="National Youth Initiative" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">National Award</span>
-              <h3>National Youth Initiative Honor</h3>
-              <div class="cert-issuer">Youth &amp; Sports Ministry</div>
-            </div>
+            <span class="cert-level">National Award</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">National Youth Initiative Honor</h3>
+            <div class="cert-issuer">Youth &amp; Sports Ministry</div>
           </div>
-          <div class="cert-date">Honored</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Honored</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/national-youth-initiative-appreciation.jpg', 'National Youth & Healthcare Initiative Recognition', 'Ministry of Youth & Sports', 'Leadership & Honors', 'Honor', 'National Initiative', 'Honoring public service, health awareness lectures, and sports medicine youth initiatives.')">View Certificate</button>
         </article>
 
         <!-- 30. Nursing Syndicate Appreciation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/nursing-syndicate-appreciation.jpg"
-          data-title="Syndicate Appreciation Award" data-issuer="General Nursing Syndicate"
-          data-date="Honor" data-level="Inter-professional Recognition"
-          data-desc="Special appreciation award for effective clinical collaboration, training, and healthcare governance.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/nursing-syndicate-appreciation.jpg" alt="Nursing Syndicate Appreciation" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">Special Honor</span>
-              <h3>Syndicate Appreciation Award</h3>
-              <div class="cert-issuer">Nursing Syndicate</div>
-            </div>
+            <span class="cert-level">Special Honor</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Syndicate Appreciation Award</h3>
+            <div class="cert-issuer">Nursing Syndicate</div>
           </div>
-          <div class="cert-date">Honored</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Honored</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/nursing-syndicate-appreciation.jpg', 'Syndicate Appreciation Award', 'General Nursing Syndicate', 'Leadership & Honors', 'Honor', 'Inter-professional Recognition', 'Special appreciation award for effective clinical collaboration, training, and healthcare governance.')">View Certificate</button>
         </article>
 
         <!-- 31. Medix Midyear Training -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/medix-midyear-training.jpg"
-          data-title="Mid-Year Continuing Education Certificate" data-issuer="Medix Platform"
-          data-date="2023" data-level="CME Training"
-          data-desc="Certificate of completion for specialized clinical and management continuous education tracks.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/medix-midyear-training.jpg" alt="Medix Midyear" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">CME Training</span>
-              <h3>Medix Mid-Year Training</h3>
-              <div class="cert-issuer">Medix Platform</div>
-            </div>
+            <span class="cert-level">CME Training</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Medix Mid-Year Training</h3>
+            <div class="cert-issuer">Medix Platform</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/medix-midyear-training.jpg', 'Mid-Year Continuing Education Certificate', 'Medix Platform', 'Leadership & Honors', '2023', 'CME Training', 'Certificate of completion for specialized clinical and management continuous education tracks.')">View Certificate</button>
         </article>
 
         <!-- 32. FDTC Digital Transformation -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/fdtc-digital-transformation.jpg"
-          data-title="Fundamentals of Digital Transformation (FDTC)" data-issuer="Supreme Council of Universities"
-          data-date="2023" data-level="FDTC Certified"
-          data-desc="National certification covering information systems, digital healthcare workflows, and IT literacy.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/fdtc-digital-transformation.jpg" alt="FDTC Digital Transformation" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">FDTC Certified</span>
-              <h3>Digital Transformation (FDTC)</h3>
-              <div class="cert-issuer">Supreme Council of Universities</div>
-            </div>
+            <span class="cert-level">FDTC Certified</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">Digital Transformation (FDTC)</h3>
+            <div class="cert-issuer">Supreme Council of Universities</div>
           </div>
-          <div class="cert-date">2023</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">2023</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/fdtc-digital-transformation.jpg', 'Fundamentals of Digital Transformation (FDTC)', 'Supreme Council of Universities', 'Leadership & Honors', '2023', 'FDTC Certified', 'National certification covering information systems, digital healthcare workflows, and IT literacy.')">View Certificate</button>
         </article>
 
         <!-- 33. ICDL Arabia Certificate -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/icdl-arabia-certificate.jpg"
-          data-title="International Computer Driving License (ICDL)" data-issuer="ICDL Arabia / UNESCO"
-          data-date="Certified" data-level="International IT"
-          data-desc="International benchmark certification verifying full competency in core computer applications.">
+        <article class="cert-card" data-category="honors">
           <img src="assets/images/icdl-arabia-certificate.jpg" alt="ICDL Arabia" class="cert-img-thumb">
           <div class="cert-top">
-            <div>
-              <span class="cert-level">International IT</span>
-              <h3>ICDL Arabia Certification</h3>
-              <div class="cert-issuer">ICDL Arabia Foundation</div>
-            </div>
+            <span class="cert-level">International IT</span>
+            <h3 style="font-size: 1.1rem; margin: 4px 0;">ICDL Arabia Certification</h3>
+            <div class="cert-issuer">ICDL Arabia Foundation</div>
           </div>
-          <div class="cert-date">Certified</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
-        </article>
-
-        <!-- 34. Doctor Profile Portrait -->
-        <article class="cert-card" data-category="honors"
-          data-category-label="Leadership &amp; Honors" data-img="assets/images/doctor-profile.jpg"
-          data-title="Medical Consultant Profile &amp; Leadership" data-issuer="Al-Zahraa Center"
-          data-date="Current" data-level="Senior Consultant"
-          data-desc="Official medical consultant portrait and leadership across physical therapy and clinical nutrition.">
-          <img src="assets/images/doctor-profile.jpg" alt="Doctor Profile" class="cert-img-thumb">
-          <div class="cert-top">
-            <div>
-              <span class="cert-level">Lead Consultant</span>
-              <h3>Medical Practice Leadership</h3>
-              <div class="cert-issuer">Al-Zahraa Center</div>
-            </div>
-          </div>
-          <div class="cert-date">Current</div>
-          <button type="button" class="btn btn-outline-navy btn-sm btn-view-cert">View Certificate</button>
+          <div class="cert-date" style="margin: 8px 0;">Certified</div>
+          <button type="button" class="btn btn-view-cert" onclick="openCertModal('assets/images/icdl-arabia-certificate.jpg', 'International Computer Driving License (ICDL)', 'ICDL Arabia / UNESCO', 'Leadership & Honors', 'Certified', 'International IT', 'International benchmark certification verifying full competency in core computer applications.')">View Certificate</button>
         </article>
 
       </div>
@@ -755,18 +559,18 @@
   </section>
 </main>
 
-<!-- Modal Viewer Popup -->
-<div id="certModal">
-  <div class="modal-box-custom">
-    <button type="button" class="modal-close-btn" id="closeBtn">&times;</button>
-    <img id="modalImg" class="modal-img-preview" src="" alt="Certificate Full View">
-    <span class="eyebrow" id="modalCategory" style="color: #0d7377; font-weight: 700; text-transform: uppercase;">Category</span>
-    <h3 id="modalTitle" style="margin: 8px 0; font-size: 1.3rem;">Title</h3>
-    <div id="modalIssuer" style="font-weight: 600; color: #0d7377; margin-bottom: 8px;">Issuer</div>
-    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 14px;">
-      <span id="modalDate">Date</span> &bull; <span id="modalLevel">Level</span>
+<!-- Isolated Popup Modal -->
+<div id="modalViewer" onclick="closeOnBackdrop(event)">
+  <div class="modal-inner">
+    <button type="button" class="modal-close-icon" onclick="closeCertModal()">&times;</button>
+    <img id="modalImgTag" class="modal-full-img" src="" alt="Certificate Full View">
+    <span class="eyebrow" id="modalCatTag" style="color: #0d7377; font-weight: 700;">Category</span>
+    <h3 id="modalTitleTag" style="margin: 6px 0; font-size: 1.3rem;">Title</h3>
+    <div id="modalIssuerTag" style="font-weight: 600; color: #0d7377; margin-bottom: 6px;">Issuer</div>
+    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">
+      <span id="modalDateTag">Date</span> &bull; <span id="modalLevelTag">Level</span>
     </div>
-    <p id="modalDesc" style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin: 0;">Description</p>
+    <p id="modalDescTag" style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin: 0;">Description</p>
   </div>
 </div>
 
@@ -777,77 +581,45 @@
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 1. Filter Logic
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
+  function openCertModal(imgSrc, title, issuer, category, date, level, desc) {
+    document.getElementById('modalImgTag').src = imgSrc;
+    document.getElementById('modalTitleTag').innerText = title;
+    document.getElementById('modalIssuerTag').innerText = issuer;
+    document.getElementById('modalCatTag').innerText = category;
+    document.getElementById('modalDateTag').innerText = date;
+    document.getElementById('modalLevelTag').innerText = level;
+    document.getElementById('modalDescTag').innerText = desc;
+    document.getElementById('modalViewer').style.display = 'flex';
+  }
 
-    filterBtns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        filterBtns.forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
+  function closeCertModal() {
+    document.getElementById('modalViewer').style.display = 'none';
+  }
 
-        certCards.forEach(function(card) {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
+  function closeOnBackdrop(e) {
+    if (e.target.id === 'modalViewer') {
+      closeCertModal();
+    }
+  }
+
+  function filterCerts(filter, btn) {
+    document.querySelectorAll('.filter-btn').forEach(function(b) {
+      b.classList.remove('active');
     });
+    btn.classList.add('active');
 
-    // 2. Modal Logic (Robust Trigger)
-    const modal = document.getElementById('certModal');
-    const modalImg = document.getElementById('modalImg');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalIssuer = document.getElementById('modalIssuer');
-    const modalCategory = document.getElementById('modalCategory');
-    const modalDate = document.getElementById('modalDate');
-    const modalLevel = document.getElementById('modalLevel');
-    const modalDesc = document.getElementById('modalDesc');
-    const closeBtn = document.getElementById('closeBtn');
-
-    function openModal(card) {
-      if (!card) return;
-      modalImg.src = card.getAttribute('data-img') || '';
-      modalTitle.textContent = card.getAttribute('data-title') || '';
-      modalIssuer.textContent = card.getAttribute('data-issuer') || '';
-      modalCategory.textContent = card.getAttribute('data-category-label') || '';
-      modalDate.textContent = card.getAttribute('data-date') || '';
-      modalLevel.textContent = card.getAttribute('data-level') || '';
-      modalDesc.textContent = card.getAttribute('data-desc') || '';
-      modal.classList.add('show-modal');
-    }
-
-    function closeModal() {
-      modal.classList.remove('show-modal');
-    }
-
-    // Attach click events on buttons and image thumbnails
-    document.addEventListener('click', function(e) {
-      const trigger = e.target.closest('.btn-view-cert, .cert-img-thumb');
-      if (trigger) {
-        e.preventDefault();
-        const card = trigger.closest('.cert-card');
-        openModal(card);
+    document.querySelectorAll('.cert-card').forEach(function(card) {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
       }
     });
+  }
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        closeModal();
-      });
-    }
-
-    if (modal) {
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          closeModal();
-        }
-      });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeCertModal();
     }
   });
 </script>
